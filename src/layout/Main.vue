@@ -5,6 +5,27 @@ import { icons } from "../stores/data";
 const openDrawer = ref(false)
 const page = ref(false)
 const map = ref(false)
+
+const enter = (el) => {
+	el.style.height = 'auto'
+	const height = getComputedStyle(el).height
+	el.style.height = 0
+
+	getComputedStyle(el)
+	setTimeout(() => {
+		el.style.height = height
+	});
+}
+const afterEnter = (el) => {
+	el.style.height = 'auto'
+}
+const leave = (el) => {
+	el.style.height = getComputedStyle(el).height
+	getComputedStyle(el)
+	setTimeout(() => {
+		el.style.height = 0
+	});
+}
 </script>
 
 <template>
@@ -29,36 +50,38 @@ const map = ref(false)
 			<button @click="page = !page" class="uno-a02nz2 w-full text-1.1rem">
 				<img :src="icons.page.parent.icon" class="uno-rq0ho8" filter-invert-100>
 				<h6 class="uno-ut4ofj">{{ icons.page.parent.title }}</h6>
-				<img src="https://api.iconify.design/ic:sharp-keyboard-arrow-down.svg" class="mr-1/2"
-					:class="page === true ? 'rotate-180 duration-250' : ''">
+				<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2" :class="page === true ? 'rotate-180 duration-250' : ''">
 			</button>
 			<!-- child -->
-			<div v-if="page" mr-7>
-				<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link" class="uno-a02nz2">
-					<img :src="page.icon" class="uno-rq0ho8" />
-					<h6 class="uno-ut4ofj">{{ page.title }}</h6>
-				</router-link>
-				<h5 class="uno-4vvqbz">عمومی</h5>
-				<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link" class="uno-a02nz2">
-					<img :src="page.icon" class="uno-rq0ho8" />
-					<h6 class="uno-ut4ofj">{{ page.title }}</h6>
-				</router-link>
-			</div>
+			<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
+				<div v-show="page" mr-7>
+					<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link" class="uno-a02nz2">
+						<img :src="page.icon" class="uno-rq0ho8" />
+						<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+					</router-link>
+					<h5 class="uno-4vvqbz">عمومی</h5>
+					<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link" class="uno-a02nz2">
+						<img :src="page.icon" class="uno-rq0ho8" />
+						<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+					</router-link>
+				</div>
+			</Transition>
 
 			<!-- MAP ICONS -->
 			<button @click="map = !map" class="uno-a02nz2 w-full text-1.1rem">
 				<img :src="icons.map.parent.icon" class="uno-rq0ho8" filter-invert-100>
 				<h6 class="uno-ut4ofj ml-1.3">{{ icons.map.parent.title }}</h6>
-				<img src="https://api.iconify.design/ic:sharp-keyboard-arrow-down.svg" class="mr-1/2"
-					:class="map === true ? 'rotate-180 duration-250' : ''">
+				<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2" :class="map === true ? 'rotate-180 duration-250' : ''">
 			</button>
 			<!-- child -->
-			<div v-if="map" mr-7>
-				<router-link v-for="map in icons.map.child" :key="map" :to="map.link" class="uno-a02nz2">
-					<img :src="map.icon" class="uno-rq0ho8" />
-					<h6 class="uno-ut4ofj">{{ map.title }}</h6>
-				</router-link>
-			</div>
+			<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
+				<div v-if="map" mr-7>
+					<router-link v-for="map in icons.map.child" :key="map" :to="map.link" class="uno-a02nz2">
+						<img :src="map.icon" class="uno-rq0ho8" />
+						<h6 class="uno-ut4ofj">{{ map.title }}</h6>
+					</router-link>
+				</div>
+			</Transition>
 		</div>
 	</TransitionGroup>
 </template>
@@ -132,5 +155,11 @@ const map = ref(false)
 	letter-spacing: -0.05em;
 	--un-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--un-text-opacity));
+}
+
+.expand-enter-active,
+.expand-leave-active {
+	transition: height .25s ease-in-out;
+	overflow: hidden;
 }
 </style>

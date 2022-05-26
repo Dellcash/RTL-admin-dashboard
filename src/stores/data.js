@@ -71,5 +71,5 @@ export const icons = {
       }
     ]
   },
-
+  arrow: 'https://api.iconify.design/ic:sharp-keyboard-arrow-down.svg',
 }
