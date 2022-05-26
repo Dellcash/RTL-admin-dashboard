@@ -7,8 +7,8 @@ const openDrawer = ref(false);
 </script>
 
 <template>
-	<header class="uno-ibna21">
-		<Hamburger class="uno-9nu97g" @click="openDrawer = true" />
+	<header class="bg-[#363636] py-1.7 px-3">
+		<Hamburger class="cursor-pointer mt-1.2" @click="openDrawer = true" />
 	</header>
 
 	<TransitionGroup
@@ -18,11 +18,20 @@ const openDrawer = ref(false);
 		<div
 			v-if="openDrawer"
 			@click="openDrawer = false"
-			class="uno-4880tm"
+			class=":uno: fixed block top-0 left-0 w-100% h-100% bg-[rgba(0,0,0,0.5)] z-9999"
 		></div>
 		<div
 			v-if="openDrawer"
-			class="uno-3ftmkt"
+			class="
+				bg-[#363636]
+				w-90%
+				overflow-y-scroll
+				h-full
+				fixed
+				top-0
+				right-0
+				z-9999
+			"
 		>
 			<div v-for="n in 100" :key="n" flex items-center>
 				<Dashboard />
@@ -33,3 +42,4 @@ const openDrawer = ref(false);
 </template>
 
 <style scoped></style>
+<!-- :uno: fixed block top-0 left-0 w-100% h-100% bg-[rgba(0,0,0,0.5)] z-9999 -->
