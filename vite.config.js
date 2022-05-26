@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 import Unocss from 'unocss/vite'
 import { presetUno, presetAttributify, transformerDirectives, transformerVariantGroup } from 'unocss'
+import transformerCompileClass from '@unocss/transformer-compile-class'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,7 +16,8 @@ export default defineConfig({
     ],
     transformers: [
       transformerDirectives(),
-      transformerVariantGroup()
+      transformerVariantGroup(),
+      transformerCompileClass()
     ]
   })],
   resolve: {
