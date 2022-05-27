@@ -8,7 +8,7 @@ export const icons = {
     {
       title: 'داشبورد CRM',
       icon: 'https://api.iconify.design/material-symbols:dashboard-customize.svg',
-      link: '#'
+      link: '/crm'
     }],
   page: {
     parent: {
@@ -72,4 +72,51 @@ export const icons = {
     ]
   },
   arrow: 'https://api.iconify.design/ic:sharp-keyboard-arrow-down.svg',
+  rest: [
+    {
+      title: 'ایمیل',
+      icon: 'https://api.iconify.design/material-symbols:mail-rounded.svg',
+      link: '#'
+    },
+    {
+      title: 'جدول درختی',
+      icon: 'https://api.iconify.design/material-symbols:backup-table.svg',
+      link: '#'
+    },
+    {
+      title: 'نمودار',
+      icon: 'https://api.iconify.design/material-symbols:bar-chart.svg',
+      link: '#'
+    },
+    {
+      title: 'مخاطبین',
+      icon: 'https://api.iconify.design/material-symbols:contact-mail.svg',
+      link: '#'
+    },
+    {
+      title: 'تسویه حساب',
+      icon: 'https://api.iconify.design/carbon:wireless-checkout.svg',
+      link: '#'
+    },
+    {
+      title: 'تقویم',
+      icon: 'https://api.iconify.design/material-symbols:calendar-month.svg',
+      link: '#'
+    },
+    {
+      title: 'وظایف',
+      icon: 'https://api.iconify.design/ic:baseline-check.svg',
+      link: '#'
+    },
+    {
+      title: 'صفحه بندی',
+      icon: 'https://api.iconify.design/fluent:dual-screen-pagination-20-filled.svg',
+      link: '#'
+    },
+    {
+      title: 'کاتالوگ محصولات',
+      icon: 'https://api.iconify.design/carbon:catalog.svg',
+      link: '#'
+    }
+  ]
 }

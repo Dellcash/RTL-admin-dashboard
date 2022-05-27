@@ -7,7 +7,11 @@ const router = createRouter({
     {
       path: '/',
       name: 'Main',
-      component: Main
+      component: Main,
+      children: [
+        { path: '', component: () => import('../views/Dashboard.vue') },
+        { path: '/crm', component: () => import('../views/CRM.vue') }
+      ]
     },
   ]
 })
