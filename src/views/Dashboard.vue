@@ -1,10 +1,11 @@
 <script setup>
+import CardSocial from '../components/card/CardSocial.vue';
 
 </script>
 
 <template>
-  shit
+  <CardSocial />
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

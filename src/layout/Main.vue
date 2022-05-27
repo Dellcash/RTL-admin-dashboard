@@ -31,7 +31,12 @@ const leave = (el) => {
 
 <template>
 	<header class="uno-x468wv">
-		<img @click="openDrawer = true" src="https://api.iconify.design/ci:hamburger.svg" class="uno-rq0ho8 mt-1.2">
+		<img @click="openDrawer = true" :src="icons.hamburger" class="uno-rq0ho8 mb-.7">
+		<div class="mt-1.5">
+			<img :src="icons.github.icon" class="uno-rq0ho8 uno-2cv3ev">
+			<img :src="icons.bell.icon" class="uno-rq0ho8 mx-3 uno-2cv3ev">
+			<img :src="icons.avatar.icon" class="uno-rq0ho8 uno-2cv3ev">
+		</div>
 	</header>
 
 	<Transition enter-active-class="animate__animated animate__fadeIn"
@@ -122,11 +127,25 @@ const leave = (el) => {
 .uno-x468wv {
 	--un-bg-opacity: 1;
 	background-color: rgba(54, 54, 54, var(--un-bg-opacity));
-	padding-top: 0.425rem;
-	padding-bottom: 0.425rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
 }
+
+.uno-2cv3ev {
+	width: 2.5rem !important;
+	border-radius: 9999px;
+	padding: 0.5rem;
+	transition-duration: 250ms;
+}
+
+.uno-2cv3ev:hover {
+	--un-bg-opacity: 1;
+	background-color: rgba(156, 163, 175, var(--un-bg-opacity));
+}
+
 
 .uno-4880tm {
 	position: fixed;

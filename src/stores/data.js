@@ -1,4 +1,17 @@
 export const icons = {
+  hamburger: 'https://api.iconify.design/ci:hamburger.svg',
+  github: {
+    icon: 'https://api.iconify.design/akar-icons:github-fill.svg',
+    link: 'https://github.com/Dellcash',
+  },
+  bell: {
+    icon: 'https://api.iconify.design/clarity:bell-solid.svg',
+    link: '#'
+  },
+  avatar: {
+    icon: 'https://api.iconify.design/icon-park:avatar.svg',
+    link: '#'
+  },
   dashboard: [
     {
       title: 'داشبورد',
@@ -120,3 +133,26 @@ export const icons = {
     }
   ]
 }
+
+export const cardSocial = [
+  {
+    icon: 'https://api.iconify.design/ri:user-6-fill.svg',
+    number: '۲۰۰',
+    title: 'اکانت من'
+  },
+  {
+    icon: 'https://api.iconify.design/mdi:twitter.svg',
+    number: '۵۰۰',
+    title: 'دنبال کننده'
+  },
+  {
+    icon: 'https://api.iconify.design/ion:logo-linkedin.svg',
+    number: '۶۴۰',
+    title: 'رابط'
+  },
+  {
+    icon: 'https://api.iconify.design/material-symbols:bar-chart.svg',
+    number: '۱۹۵۱',
+    title: 'بازدید کننده'
+  }
+]
