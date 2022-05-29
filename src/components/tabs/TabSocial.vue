@@ -29,7 +29,6 @@ provide('selectedTitle', selectedTitle)
           }}
           </h6>
         </div>
-        <!--  -->
         <h6 class="absolute bg-red-700 text-white px-1.2 rounded fw1 top-1 right-1">
           {{ notification[tabs.indexOf(title)] }}
         </h6>

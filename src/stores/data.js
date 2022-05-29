@@ -136,7 +136,25 @@ export const icons = {
     contact: 'https://api.iconify.design/material-symbols:contact-phone-sharp.svg',
     message: 'https://api.iconify.design/ic:round-message.svg',
     notification: 'https://api.iconify.design/material-symbols:notifications.svg',
-    phone: 'https://api.iconify.design/flat-color-icons:phone.svg'
+    phone: 'https://api.iconify.design/flat-color-icons:phone.svg',
+    notificationTab: [
+      {
+        title: 'آواتار اعلان',
+        icon: 'https://api.iconify.design/material-symbols:notification-important-rounded.svg',
+      },
+      {
+        title: 'آواتار اعلان',
+        icon: 'https://api.iconify.design/material-symbols:notifications-active.svg',
+      },
+      {
+        title: 'آواتار اعلان',
+        icon: 'https://api.iconify.design/material-symbols:notification-add-sharp.svg',
+      },
+      {
+        title: 'آواتار اعلان',
+        icon: 'https://api.iconify.design/ic:round-edit-notifications.svg',
+      },
+    ]
   }
 }
 
@@ -163,38 +181,52 @@ export const cardSocial = [
   }
 ]
 
+export const usersInfo = {
+  users: [
+    {
+      img: 'https://joeschmoe.io/api/v1/male/jacques',
+      name: 'عرفان طاهری',
+      job: 'توسعه‌دهنده',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۱۱:۳۰'
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/josh',
+      name: 'رسول فلاح',
+      job: 'طراح',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۱۰:۰۰'
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/jerry',
+      name: 'هوشنگ حسینی',
+      job: 'اپراتور',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۰۳:۳۰'
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/james',
+      name: 'شاپور پیردوست',
+      job: 'مدیر',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۰۴:۲۰'
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/joe',
+      name: 'ارژنگ بهداد',
+      job: 'مشاور',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۰۵:۰۰'
+    },
+  ]
+}
+
 export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
   return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
 }
 
-export const tabs = {
-  contact: [
-    {
-      img: 'https://joeschmoe.io/api/v1/male/jacques',
-      name: 'عرفان طاهری',
-      job: 'توسعه‌دهنده',
-    },
-    {
-      img: 'https://joeschmoe.io/api/v1/male/josh',
-      name: 'رسول فلاح',
-      job: 'طراح',
-    },
-    {
-      img: 'https://joeschmoe.io/api/v1/male/jerry',
-      name: 'هوشنگ حسینی',
-      job: 'اپراتور',
-    },
-    {
-      img: 'https://joeschmoe.io/api/v1/male/james',
-      name: 'شاپور پیردوست',
-      job: 'مدیر',
-    },
-    {
-      img: 'https://joeschmoe.io/api/v1/male/joe',
-      name: 'ارژنگ بهداد',
-      job: 'مشاور',
-    },
-  ]
+export const shuffle = (array) => {
+  array.sort(() => Math.random() - 0.5);
 }
