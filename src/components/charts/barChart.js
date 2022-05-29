@@ -1,6 +1,5 @@
 import { defineComponent, h } from 'vue'
 import { toFarsiNumber } from '../../stores/data'
-import IRANSans from '../../fonts/FontsFree-Net-ir_sans.ttf'
 
 import { Bar } from 'vue-chartjs'
 
@@ -66,11 +65,27 @@ export default defineComponent({
       datasets: [
         {
           label: 'اطلاعات خرید',
-          backgroundColor: ['#371B58', '#4C3575', '#5B4B8A', '#7858A6'],
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+          backgroundColor: ['#371B58', '#4C3575', '#5B4B8A', '#6a4c93'],
+          data: [30, 20, 12, 3, 10, 40, 35, 80, 63, 20, 50, 11]
         }
       ],
     }
+
+    // const shuffleData = (data) => {
+    //   const shuffledData = data.slice(0)
+    //   const length = shuffledData.length
+    //   for (let i = length - 1; i > 0; i--) {
+    //     const j = Math.floor(Math.random() * (i + 1))
+    //     const temp = shuffledData[i]
+    //     shuffledData[i] = shuffledData[j]
+    //     shuffledData[j] = temp
+    //   }
+    //   return shuffledData
+    // }
+
+    // setInterval(() => {
+    //   console.log(shuffleData(chartData.datasets[0].data));
+    // }, 2000);
 
     const chartOptions = {
       responsive: true,
@@ -116,7 +131,6 @@ export default defineComponent({
         x: {
           ticks: {
             color: 'white',
-            family: IRANSans,
             font: {
               family: 'IRANSans',
               size: 10,

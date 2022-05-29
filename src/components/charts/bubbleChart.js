@@ -1,4 +1,5 @@
-import { defineComponent, h, PropType } from 'vue'
+import { defineComponent, h } from 'vue'
+import { toFarsiNumber } from '../../stores/data'
 
 import { Bubble } from 'vue-chartjs'
 
@@ -9,7 +10,6 @@ import {
   Legend,
   PointElement,
   LinearScale,
-  Plugin
 } from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, PointElement, LinearScale)
@@ -37,11 +37,11 @@ export default defineComponent({
       type: String
     },
     styles: {
-      type: Object as PropType<Partial<CSSStyleDeclaration>>,
+      type: Object,
       default: () => { }
     },
     plugins: {
-      type: Array as PropType<Plugin<'bubble'>[]>,
+      type: Array,
       default: () => []
     }
   },
@@ -49,8 +49,8 @@ export default defineComponent({
     const chartData = {
       datasets: [
         {
-          label: '. . .',
-          backgroundColor: '#f87979',
+          label: 'شش ماه اول',
+          backgroundColor: '#132a13',
           data: [
             {
               x: 20,
@@ -70,8 +70,8 @@ export default defineComponent({
           ]
         },
         {
-          label: '. . .',
-          backgroundColor: '#7C8CF8',
+          label: 'شش ماه دوم',
+          backgroundColor: '#90a955',
           data: [
             {
               x: 10,
@@ -98,11 +98,38 @@ export default defineComponent({
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          labels: {
-            color: '#fff'
-          }
+          display: false,
         },
       },
+      scales: {
+        y: {
+          ticks: {
+            color: 'white',
+            callback: (value) => {
+              return toFarsiNumber(value)
+            },
+            font: {
+              family: 'IRANSans',
+              size: 12
+            },
+          },
+        },
+        x: {
+          ticks: {
+            color: 'white',
+            callback: (value) => {
+              return toFarsiNumber(value)
+            },
+            font: {
+              family: 'IRANSans',
+              size: 12
+            },
+          },
+        }
+      },
+      layout: {
+        padding: { top: 0, right: 0, left: 15, bottom: 5 }
+      }
     }
 
     return () =>

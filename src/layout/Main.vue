@@ -31,7 +31,7 @@ const leave = (el) => {
 
 <template>
 	<header class="uno-x468wv">
-		<img @click="openDrawer = true" :src="icons.hamburger" class="uno-rq0ho8 mb-.7">
+		<img @click="openDrawer = true" :src="icons.hamburger" class="uno-rq0ho8 uno-2cv3ev mb-.7">
 		<div class="mt-1.5">
 			<img :src="icons.github.icon" class="uno-rq0ho8 uno-2cv3ev">
 			<img :src="icons.bell.icon" class="uno-rq0ho8 mx-3 uno-2cv3ev">

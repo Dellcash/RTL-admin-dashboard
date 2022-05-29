@@ -131,7 +131,13 @@ export const icons = {
       icon: 'https://api.iconify.design/carbon:catalog.svg',
       link: '#'
     }
-  ]
+  ],
+  tabs: {
+    contact: 'https://api.iconify.design/material-symbols:contact-phone-sharp.svg',
+    message: 'https://api.iconify.design/ic:round-message.svg',
+    notification: 'https://api.iconify.design/material-symbols:notifications.svg',
+    phone: 'https://api.iconify.design/flat-color-icons:phone.svg'
+  }
 }
 
 export const cardSocial = [
@@ -161,4 +167,34 @@ export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 
   return n.toString().replace(/\d/g, (x) => farsiDigits[x]);
+}
+
+export const tabs = {
+  contact: [
+    {
+      img: 'https://joeschmoe.io/api/v1/male/jacques',
+      name: 'عرفان طاهری',
+      job: 'توسعه‌دهنده',
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/josh',
+      name: 'رسول فلاح',
+      job: 'طراح',
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/jerry',
+      name: 'هوشنگ حسینی',
+      job: 'اپراتور',
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/james',
+      name: 'شاپور پیردوست',
+      job: 'مدیر',
+    },
+    {
+      img: 'https://joeschmoe.io/api/v1/male/joe',
+      name: 'ارژنگ بهداد',
+      job: 'مشاور',
+    },
+  ]
 }

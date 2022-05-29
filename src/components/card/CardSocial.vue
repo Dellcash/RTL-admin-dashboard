@@ -3,10 +3,10 @@ import { cardSocial } from '../../stores/data';
 </script>
 
 <template>
-  <div class="grid gap-2 m-2">
+  <div class="grid gap-2">
     <div v-for="card in cardSocial" :key="card" class="uno-21nbpy">
       <div class="uno-m3ll32">
-        <img :src="card.icon" class="uno-qds0uv">
+        <img :src="card.icon" class="uno-qds0uv filter-invert-10">
       </div>
       <div class="text-white mr-4 tracking-widest">
         <h4>{{ card.number }}</h4>
