@@ -8,16 +8,18 @@ import Message from '../components/tabs/each/Message.vue';
 import Avatar from '../components/tabs/each/Avatar.vue';
 import { icons, usersInfo } from '../stores/data';
 import { computed } from '@vue/reactivity';
+import CardWithImage from '../components/card/CardWithImage.vue';
 
 const randomInfo = computed(() => {
   return usersInfo.users.sort(() => Math.random() - 0.5);
 })
 </script>
-
 <template>
+
   <main m2>
     <CardSocial />
     <CardChart />
+
 
     <div mt-2>
       <TabSocial>
@@ -31,6 +33,8 @@ const randomInfo = computed(() => {
           <Avatar v-for="avatar in icons.tabs.notificationTab" :key="avatar" :avatar="avatar" />
         </Tab>
       </TabSocial>
+
+      <CardWithImage />
     </div>
   </main>
 </template>
