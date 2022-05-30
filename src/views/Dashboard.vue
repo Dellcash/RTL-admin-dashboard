@@ -6,9 +6,10 @@ import Tab from '../components/tabs/Tab.vue';
 import Contact from '../components/tabs/each/Contact.vue';
 import Message from '../components/tabs/each/Message.vue';
 import Avatar from '../components/tabs/each/Avatar.vue';
+import CardWithImage from '../components/card/CardWithImage.vue';
 import { icons, usersInfo } from '../stores/data';
 import { computed } from '@vue/reactivity';
-import CardWithImage from '../components/card/CardWithImage.vue';
+import Todo from '../components/list/Todo.vue';
 
 const randomInfo = computed(() => {
   return usersInfo.users.sort(() => Math.random() - 0.5);
@@ -35,6 +36,10 @@ const randomInfo = computed(() => {
       </TabSocial>
 
       <CardWithImage />
+    </div>
+
+    <div my-2>
+      <Todo />
     </div>
   </main>
 </template>

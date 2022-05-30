@@ -1,3 +1,5 @@
+import { reactive } from 'vue'
+
 export const icons = {
   hamburger: 'https://api.iconify.design/ci:hamburger.svg',
   github: {
@@ -155,7 +157,11 @@ export const icons = {
         icon: 'https://api.iconify.design/ic:round-edit-notifications.svg',
       },
     ]
-  }
+  },
+  todo: [
+    'https://api.iconify.design/ri:calendar-todo-fill.svg',
+    'https://api.iconify.design/ic:baseline-message.svg'
+  ]
 }
 
 export const cardSocial = [
@@ -181,45 +187,55 @@ export const cardSocial = [
   }
 ]
 
-export const usersInfo = {
+export const usersInfo = reactive({
   users: [
     {
+      id: '1',
       img: 'https://joeschmoe.io/api/v1/male/jacques',
       name: 'عرفان طاهری',
       job: 'توسعه‌دهنده',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
-      lastMessage: '۱۱:۳۰'
+      lastMessage: '۱۱:۳۰',
+      compeleted: false
     },
     {
+      id: '2',
       img: 'https://joeschmoe.io/api/v1/male/josh',
       name: 'رسول فلاح',
       job: 'طراح',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
-      lastMessage: '۱۰:۰۰'
+      lastMessage: '۱۰:۰۰',
+      compeleted: false
     },
     {
+      id: '3',
       img: 'https://joeschmoe.io/api/v1/male/jerry',
       name: 'هوشنگ حسینی',
       job: 'اپراتور',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
-      lastMessage: '۰۳:۳۰'
+      lastMessage: '۰۳:۳۰',
+      compeleted: false
     },
     {
+      id: '4',
       img: 'https://joeschmoe.io/api/v1/male/james',
       name: 'شاپور پیردوست',
       job: 'مدیر',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
-      lastMessage: '۰۴:۲۰'
+      lastMessage: '۰۴:۲۰',
+      compeleted: false
     },
     {
+      id: '5',
       img: 'https://joeschmoe.io/api/v1/male/joe',
       name: 'ارژنگ بهداد',
       job: 'مشاور',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
-      lastMessage: '۰۵:۰۰'
+      lastMessage: '۰۵:۰۰',
+      compeleted: false
     },
   ]
-}
+})
 
 export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
