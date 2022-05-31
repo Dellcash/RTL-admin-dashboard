@@ -1,15 +1,16 @@
 <script setup>
-import CardSocial from '../components/card/CardSocial.vue';
-import CardChart from '../components/card/CardChart.vue';
-import TabSocial from '../components/tabs/TabSocial.vue';
-import Tab from '../components/tabs/Tab.vue';
-import Contact from '../components/tabs/each/Contact.vue';
-import Message from '../components/tabs/each/Message.vue';
-import Avatar from '../components/tabs/each/Avatar.vue';
-import CardWithImage from '../components/card/CardWithImage.vue';
+// import CardSocial from '../components/card/CardSocial.vue';
+// import CardChart from '../components/card/CardChart.vue';
+// import TabSocial from '../components/tabs/TabSocial.vue';
+// import Tab from '../components/tabs/Tab.vue';
+// import Contact from '../components/tabs/each/Contact.vue';
+// import Message from '../components/tabs/each/Message.vue';
+// import Avatar from '../components/tabs/each/Avatar.vue';
+// import CardWithImage from '../components/card/CardWithImage.vue';
+// import Todo from '../components/list/Todo.vue';
+import CardTimeLine from '../components/card/CardTimeLine.vue';
 import { icons, usersInfo } from '../stores/data';
 import { computed } from '@vue/reactivity';
-import Todo from '../components/list/Todo.vue';
 
 const randomInfo = computed(() => {
   return usersInfo.users.sort(() => Math.random() - 0.5);
@@ -18,7 +19,7 @@ const randomInfo = computed(() => {
 <template>
 
   <main m2>
-    <CardSocial />
+    <!-- <CardSocial />
     <CardChart />
 
 
@@ -36,10 +37,12 @@ const randomInfo = computed(() => {
       </TabSocial>
 
       <CardWithImage />
-    </div>
+    </div> -->
 
     <div my-2>
-      <Todo />
+      <!-- <Todo /> -->
+
+      <CardTimeLine />
     </div>
   </main>
 </template>

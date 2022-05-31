@@ -75,5 +75,6 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
   height: 1.25rem;
   border-width: 1px;
   border-style: solid;
+  cursor: pointer;
 }
 </style>

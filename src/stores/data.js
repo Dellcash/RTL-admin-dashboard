@@ -161,7 +161,13 @@ export const icons = {
   todo: [
     'https://api.iconify.design/ri:calendar-todo-fill.svg',
     'https://api.iconify.design/ic:baseline-message.svg'
-  ]
+  ],
+  timeLine: {
+    clock: 'https://api.iconify.design/ic:sharp-access-time.svg',
+    like1: 'https://api.iconify.design/ant-design:like-filled.svg',
+    tick: 'https://api.iconify.design/ri:check-double-fill.svg',
+    like2: 'https://api.iconify.design/bxs:like.svg'
+  }
 }
 
 export const cardSocial = [
@@ -236,6 +242,24 @@ export const usersInfo = reactive({
     },
   ]
 })
+
+export const timeLine = [
+  {
+    title: 'عرفان طاهری این محصول را پسندید',
+    message:
+      ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+  },
+  {
+    title: 'بروزرسانی محصولات',
+    message:
+      ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+  },
+  {
+    title: 'ارژنگ بهداد این محصول را پسندید',
+    message:
+      ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+  }
+]
 
 export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
