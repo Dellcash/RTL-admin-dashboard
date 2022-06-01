@@ -91,7 +91,7 @@ export const icons = {
     {
       title: 'ایمیل',
       icon: 'https://api.iconify.design/material-symbols:mail-rounded.svg',
-      link: '#'
+      link: '/email'
     },
     {
       title: 'جدول درختی',
@@ -167,7 +167,8 @@ export const icons = {
     like1: 'https://api.iconify.design/ant-design:like-filled.svg',
     tick: 'https://api.iconify.design/ri:check-double-fill.svg',
     like2: 'https://api.iconify.design/bxs:like.svg'
-  }
+  },
+  search: 'https://api.iconify.design/material-symbols:search.svg'
 }
 
 export const cardSocial = [

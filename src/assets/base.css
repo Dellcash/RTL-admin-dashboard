@@ -12,6 +12,7 @@
 
 html {
 	background-color: rgb(238, 238, 238);
+	scroll-behavior: smooth;
 }
 
 button {
@@ -31,4 +32,18 @@ li {
 
 p {
 	color: rgb(31, 41, 55);
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 8px;
 }

@@ -3,7 +3,7 @@ import { cardSocial } from '../../stores/data';
 </script>
 
 <template>
-  <div class="grid gap-2">
+  <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
     <div v-for="card in cardSocial" :key="card" class="uno-21nbpy">
       <div class="uno-m3ll32">
         <img :src="card.icon" class="uno-qds0uv filter-invert-10">
@@ -21,6 +21,7 @@ import { cardSocial } from '../../stores/data';
   width: 100%;
   display: flex;
   align-items: center;
+  border-radius: 0.25rem;
   --un-bg-opacity: 1;
   background-color: rgba(80, 100, 181, var(--un-bg-opacity));
 }
@@ -42,6 +43,7 @@ import { cardSocial } from '../../stores/data';
   padding: 1.25rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  border-radius: 0.25rem;
 }
 
 .uno-21nbpy:first-child .uno-m3ll32 {

@@ -10,7 +10,8 @@ const router = createRouter({
       component: Main,
       children: [
         { path: '', component: () => import('../views/Dashboard.vue') },
-        { path: '/crm', component: () => import('../views/CRM.vue') }
+        { path: '/crm', component: () => import('../views/CRM.vue') },
+        { path: '/email', component: () => import('../views/Email.vue') }
       ]
     },
   ]

@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue"
+import { onMounted, ref } from "vue"
 import { icons } from "../stores/data";
 import { RouterView } from "vue-router";
 
@@ -27,100 +27,150 @@ const leave = (el) => {
 		el.style.height = 0
 	});
 }
+
+const duration = ref(0)
+onMounted(() => {
+	if (window.innerWidth >= 1024) {
+		openDrawer.value = true
+	}
+
+	duration.value = window.innerWidth < 1024 ? 1000 : 0.5
+})
+
 </script>
 
 <template>
-	<header class="uno-x468wv">
-		<img @click="openDrawer = true" :src="icons.hamburger" class="uno-rq0ho8 uno-2cv3ev mb-.7">
-		<div class="mt-1.5">
-			<img :src="icons.github.icon" class="uno-rq0ho8 uno-2cv3ev">
-			<img :src="icons.bell.icon" class="uno-rq0ho8 mx-3 uno-2cv3ev">
-			<img :src="icons.avatar.icon" class="uno-rq0ho8 uno-2cv3ev">
+	<div lg="flex items-start">
+		<div lg="order-1 flex-1">
+			<header class="uno-x468wv">
+				<img @click="openDrawer = !openDrawer" :src="icons.hamburger" class="uno-rq0ho8 uno-2cv3ev mb-.7 lg:hidden">
+				<img :src="icons.search" class="uno-rq0ho8 uno-2cv3ev hidden lg:block">
+				<div class="mt-1.5">
+					<img :src="icons.github.icon" class="uno-rq0ho8 uno-2cv3ev">
+					<img :src="icons.bell.icon" class="uno-rq0ho8 mx-3 uno-2cv3ev">
+					<img :src="icons.avatar.icon" class="uno-rq0ho8 uno-2cv3ev">
+				</div>
+			</header>
+
+			<router-view v-slot="{ Component }">
+				<transition mode="out-in" enter-active-class="animate__animated animate__fadeIn"
+					leave-active-class="animate__animated animate__fadeOut">
+					<component :is="Component" />
+				</transition>
+			</router-view>
 		</div>
-	</header>
 
-	<Transition enter-active-class="animate__animated animate__fadeIn"
-		leave-active-class="animate__animated animate__fadeOut">
-		<!-- BG -->
-		<div v-if="openDrawer" @click="openDrawer = false" class="uno-4880tm "></div>
-	</Transition>
-	<!-- DRAWER -->
-	<TransitionGroup enter-active-class="animate__animated animate__slideInRight"
-		leave-active-class="animate__animated animate__slideOutRight">
-		<!-- SIDENAV -->
-		<div v-if="openDrawer" class="uno-3ftmkt">
-			<!-- HEADER -->
-			<div mb-2>
-				<div class="uno-us22lg">
-					<h3 class="uno-0obw2y">پنل مدیریت</h3>
-					<h3 class="uno-puuac8">DE
-					</h3>
-				</div>
+		<Transition enter-active-class="animate__animated animate__fadeIn"
+			leave-active-class="animate__animated animate__fadeOut">
+			<!-- BG -->
+			<div v-if="openDrawer" @click="openDrawer = false" class="uno-4880tm !lg:hidden"></div>
+		</Transition>
+		<!-- DRAWER -->
+		<TransitionGroup :duration="duration" enter-active-class="animate__animated animate__slideInRight"
+			leave-active-class="animate__animated animate__slideOutRight">
+			<!-- SIDENAV -->
+			<div v-if="openDrawer" class="uno-3ftmkt !lg:(relative h-screen)">
+				<!-- HEADER -->
+				<div mb-2>
+					<div class="uno-us22lg">
+						<h3 class="uno-0obw2y">پنل مدیریت</h3>
+						<h3 class="uno-puuac8">DE
+						</h3>
+					</div>
 
-				<div class="uno-rzgqts">
-					<img src="../assets/images/Dellkesh.jpeg" alt="Me" class="uno-029z3l shadow-lg">
-					<h5 class="uno-0obw2y mr-6">امید دلکش</h5>
+					<div class="uno-rzgqts">
+						<img src="../assets/images/Dellkesh.jpeg" alt="Me" class="uno-029z3l shadow-lg">
+						<h5 class="uno-0obw2y mr-6">امید دلکش</h5>
+					</div>
 				</div>
+				<!-- DASHBOARD ICONS -->
+				<router-link v-for="dashboard in icons.dashboard" :key="dashboard" :to="dashboard.link"
+					@click="openDrawer = false" class="uno-a02nz2 !lg:hidden">
+					<img :src="dashboard.icon" class="uno-rq0ho8" />
+					<h6 class="uno-ut4ofj">{{ dashboard.title }}</h6>
+				</router-link>
+
+				<router-link v-for="dashboard in icons.dashboard" :key="dashboard" :to="dashboard.link"
+					class="uno-a02nz2 hidden lg:block">
+					<img :src="dashboard.icon" class="uno-rq0ho8" />
+					<h6 class="uno-ut4ofj">{{ dashboard.title }}</h6>
+				</router-link>
+
+				<!-- PAGE ICONS -->
+				<button @click="page = !page" class="uno-a02nz2 uno-3c1cid">
+					<img :src="icons.page.parent.icon" class="uno-rq0ho8">
+					<h6 class="uno-ut4ofj">{{ icons.page.parent.title }}</h6>
+					<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2 !filter-invert-50"
+						:class="page === true ? 'rotate-180 duration-300' : 'duration-250'">
+				</button>
+				<!-- child -->
+				<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
+					<div v-show="page" mr-7>
+						<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link"
+							@click="openDrawer = false" class="uno-a02nz2 !lg:hidden">
+							<img :src="page.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+						</router-link>
+
+						<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link"
+							class="uno-a02nz2 hidden lg:block">
+							<img :src="page.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+						</router-link>
+
+						<h5 class="uno-4vvqbz">عمومی</h5>
+						<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link"
+							@click="openDrawer = false" class="uno-a02nz2 !lg:hidden">
+							<img :src="page.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+						</router-link>
+
+						<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link"
+							class="uno-a02nz2 hidden lg:block">
+							<img :src="page.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ page.title }}</h6>
+						</router-link>
+					</div>
+				</Transition>
+
+				<!-- MAP ICONS -->
+				<button @click="map = !map" class="uno-a02nz2 uno-3c1cid">
+					<img :src="icons.map.parent.icon" class="uno-rq0ho8">
+					<h6 class="uno-ut4ofj ml-1.3">{{ icons.map.parent.title }}</h6>
+					<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2 !filter-invert-50"
+						:class="map === true ? 'rotate-180 duration-300' : 'duration-250'">
+				</button>
+				<!-- child -->
+				<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
+					<div v-if="map" mr-7>
+						<router-link v-for="map in icons.map.child" :key="map" :to="map.link" @click="openDrawer = false"
+							class="uno-a02nz2 !lg:hidden">
+							<img :src="map.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ map.title }}</h6>
+						</router-link>
+
+						<router-link v-for="map in icons.map.child" :key="map" :to="map.link" class="uno-a02nz2 hidden lg:block">
+							<img :src="map.icon" class="uno-rq0ho8" />
+							<h6 class="uno-ut4ofj">{{ map.title }}</h6>
+						</router-link>
+					</div>
+				</Transition>
+
+				<!-- REST OF ICONS -->
+				<router-link v-for="icon in icons.rest" :key="icon" :to="icon.link" @click="openDrawer = false"
+					class="uno-a02nz2 !lg:hidden">
+					<img :src="icon.icon" class="uno-rq0ho8" />
+					<h6 class="uno-ut4ofj">{{ icon.title }}</h6>
+				</router-link>
+
+				<router-link v-for="icon in icons.rest" :key="icon" :to="icon.link" class="uno-a02nz2 hidden lg:block">
+					<img :src="icon.icon" class="uno-rq0ho8" />
+					<h6 class="uno-ut4ofj">{{ icon.title }}</h6>
+				</router-link>
 			</div>
-			<!-- DASHBOARD ICONS -->
-			<router-link v-for="dashboard in icons.dashboard" :key="dashboard" :to="dashboard.link"
-				@click="openDrawer = false" class="uno-a02nz2">
-				<img :src="dashboard.icon" class="uno-rq0ho8" />
-				<h6 class="uno-ut4ofj">{{ dashboard.title }}</h6>
-			</router-link>
+		</TransitionGroup>
 
-			<!-- PAGE ICONS -->
-			<button @click="page = !page" class="uno-a02nz2 uno-3c1cid">
-				<img :src="icons.page.parent.icon" class="uno-rq0ho8">
-				<h6 class="uno-ut4ofj">{{ icons.page.parent.title }}</h6>
-				<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2 !filter-invert-50"
-					:class="page === true ? 'rotate-180 duration-300' : 'duration-250'">
-			</button>
-			<!-- child -->
-			<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
-				<div v-show="page" mr-7>
-					<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link"
-						@click="openDrawer = false" class="uno-a02nz2">
-						<img :src="page.icon" class="uno-rq0ho8" />
-						<h6 class="uno-ut4ofj">{{ page.title }}</h6>
-					</router-link>
-					<h5 class="uno-4vvqbz">عمومی</h5>
-					<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link"
-						@click="openDrawer = false" class="uno-a02nz2">
-						<img :src="page.icon" class="uno-rq0ho8" />
-						<h6 class="uno-ut4ofj">{{ page.title }}</h6>
-					</router-link>
-				</div>
-			</Transition>
-
-			<!-- MAP ICONS -->
-			<button @click="map = !map" class="uno-a02nz2 uno-3c1cid">
-				<img :src="icons.map.parent.icon" class="uno-rq0ho8">
-				<h6 class="uno-ut4ofj ml-1.3">{{ icons.map.parent.title }}</h6>
-				<img :src="icons.arrow" class="uno-rq0ho8 mr-1/2 !filter-invert-50"
-					:class="map === true ? 'rotate-180 duration-300' : 'duration-250'">
-			</button>
-			<!-- child -->
-			<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
-				<div v-if="map" mr-7>
-					<router-link v-for="map in icons.map.child" :key="map" :to="map.link" @click="openDrawer = false"
-						class="uno-a02nz2">
-						<img :src="map.icon" class="uno-rq0ho8" />
-						<h6 class="uno-ut4ofj">{{ map.title }}</h6>
-					</router-link>
-				</div>
-			</Transition>
-
-			<!-- REST OF ICONS -->
-			<router-link v-for="icon in icons.rest" :key="icon" :to="icon.link" @click="openDrawer = false"
-				class="uno-a02nz2">
-				<img :src="icon.icon" class="uno-rq0ho8" />
-				<h6 class="uno-ut4ofj">{{ icon.title }}</h6>
-			</router-link>
-		</div>
-	</TransitionGroup>
-
-	<RouterView />
+	</div>
 </template>
 
 <style scoped>
@@ -164,7 +214,7 @@ const leave = (el) => {
 	top: 0rem;
 	right: 0rem;
 	z-index: 9999;
-	width: 90%;
+	width: 260px;
 	height: 100%;
 	overflow-y: scroll;
 	padding-bottom: .8rem;

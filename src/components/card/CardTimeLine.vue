@@ -39,6 +39,7 @@ import { icons, timeLine } from '../../stores/data';
 .bgwhit {
   position: relative;
   border-radius: 0.25rem;
+  margin-top: 0.5rem;
   --un-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--un-bg-opacity));
   --un-shadow: var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgba(0, 0, 0, 0.1)), var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgba(0, 0, 0, 0.1));

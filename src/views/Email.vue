@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>
-    CRM
-  </div>
+  email
 </template>
 
 <style lang="scss" scoped>
