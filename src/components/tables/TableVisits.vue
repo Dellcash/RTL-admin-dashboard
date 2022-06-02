@@ -13,24 +13,26 @@ date.value = date.value.toLocaleString('fa-IR', options)
 const search = ref('')
 const error = ref('')
 const filterUsers = computed(() => {
-  return usersInfo.users.filter((user) => user.name.includes(search.value))
+  return usersInfo.users.slice(0, 5).filter((user) => user.name.includes(search.value))
 })
-
 watch(search, () => {
   if (filterUsers.value.length === 0) {
-    error.value = 'کاربری با این نام یافت نشد'
+    error.value = 'کاربری با این نام یافت نشد!'
   } else {
     error.value = ''
   }
 })
+
+const selected = ref(false)
+const selectedOptions = ref(['۵', '۱۰', '۱۵', '۲۰', '۲۵', '۳۰'])
 </script>
 
 <template>
   <div class="c10kz9 shadow">
-    <div mb5>
+    <div mb5 sm="gw6dv1">
       <h4 p="2 b3">بازدید کنندگان</h4>
 
-      <div>
+      <div sm="aht1e" lg="ml-10">
         <div class="s9l3a4">
           <input v-model="search" type="text" class="m205la" placeholder="جستجو...">
           <div>
@@ -40,6 +42,9 @@ watch(search, () => {
           </div>
         </div>
 
+        <img :src="icons.bell.icon" class="n6zhu">
+        <button class="snydy">استخراج
+        </button>
       </div>
     </div>
 
@@ -81,6 +86,15 @@ watch(search, () => {
     <div v-if="error">
       <h6 class="z209kq">{{ error }}</h6>
     </div>
+
+    <div class="ps1ezb">
+      <h6 class="!text-10px">رکودر برهر صفحه</h6>
+      <select class="n501j9">
+        <option v-for="option in selectedOptions" :key="option" :value="option">{{ option }}
+        </option>
+      </select>
+      <h6 class="s198je">۵ از ۱-۵</h6>
+    </div>
   </div>
 </template>
 
@@ -118,6 +132,42 @@ watch(search, () => {
 
 .m205la::placeholder {
   font-size: 12px;
+}
+
+.n6zhu {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+  display: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: .4rem;
+  border-radius: 9999%;
+}
+
+.n6zhu:hover {
+  --un-bg-opacity: 1;
+  background-color: rgba(243, 244, 246, var(--un-bg-opacity));
+}
+
+.snydy {
+  display: none;
+  border-radius: 0.25rem;
+  --un-bg-opacity: 1;
+  background-color: rgba(0, 0, 0, var(--un-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  --un-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--un-text-opacity));
+  transition-duration: 250ms;
+}
+
+.snydy:hover {
+  --un-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--un-bg-opacity));
 }
 
 .qcese4 {
@@ -159,5 +209,67 @@ watch(search, () => {
   text-align: center;
   --un-text-opacity: 1;
   color: rgba(239, 68, 68, var(--un-text-opacity));
+}
+
+.ps1ezb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.n501j9 {
+  cursor: pointer;
+  border-style: none;
+}
+
+.n501j9:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.s198je {
+  padding-right: 1rem;
+  font-size: 10px !important;
+}
+
+
+@media (min-width: 640px) {
+  [sm~="gw6dv1"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  [sm~="aht1e"] {
+    margin-right: 1.25rem;
+    width: 28rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .snydy,
+  .n6zhu {
+    display: block;
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  tr,
+  th {
+    padding-bottom: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  h6 {
+    font-size: 0.775rem;
+    line-height: 1.25rem;
+  }
 }
 </style>

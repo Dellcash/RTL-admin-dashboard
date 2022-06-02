@@ -3,9 +3,9 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
 </script>
 
 <template>
-  <div class="uno-cd8n95">
-    <div class="uno-wv650s">
-      <img :src="icons.todo.slice(0, 1)" class="uno-4klpvh filtered-img">
+  <div class="cd8n95">
+    <div class="wv650s">
+      <img :src="icons.todo.slice(0, 1)" class="k4lpvh">
       <div text-white>
         <h4>لیست تسک‌ها</h4>
         <h5 fw1>تمامی تسک‌های شما</h5>
@@ -13,10 +13,10 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
     </div>
 
     <div>
-      <div v-for="(task, index) in usersInfo.users" :key="index" class="uno-6if4rr">
-        <div class="uno-p7v3cs justify-between">
-          <div class="uno-p7v3cs">
-            <input type="checkbox" v-model="task.compeleted" class="uno-flytkb">
+      <div v-for="(task, index) in usersInfo.users.slice(0, 6)" :key="index" class="i6f4rr">
+        <div class="p7v3cs justify-between">
+          <div class="p7v3cs">
+            <input type="checkbox" v-model="task.compeleted" class="flytkb">
             <div>
               <h5 :class="[task.compeleted === false ? '' : 'line-through']">انجام کار {{ toFarsiNumber(task.id) }}
               </h5>
@@ -31,29 +31,26 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
 </template>
 
 <style scoped>
-.filtered-img {
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg) brightness(98%) contrast(108%);
-}
-
-.uno-cd8n95 {
+.cd8n95 {
   border-radius: 0.25rem;
   --un-bg-opacity: 1;
   background-color: rgba(33, 150, 243, var(--un-bg-opacity));
   padding-bottom: 1rem;
 }
 
-.uno-wv650s {
+.wv650s {
   display: flex;
   align-items: center;
   padding: 1.75rem;
 }
 
-.uno-4klpvh {
+.k4lpvh {
   margin-left: 1rem;
   width: 2.5rem;
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg) brightness(98%) contrast(108%);
 }
 
-.uno-6if4rr {
+.i6f4rr {
   margin-left: 1rem;
   margin-right: 1rem;
   --un-bg-opacity: 1;
@@ -64,12 +61,12 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
   padding-bottom: 0.75rem;
 }
 
-.uno-p7v3cs {
+.p7v3cs {
   display: flex;
   align-items: center;
 }
 
-.uno-flytkb {
+.flytkb {
   margin-left: 1rem;
   width: 1.25rem;
   height: 1.25rem;

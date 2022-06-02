@@ -2,6 +2,7 @@
 import { icons, timeLine } from '../../stores/data';
 </script>
 
+
 <template>
   <div class="bgwhit">
     <div class="flexit">
@@ -9,29 +10,27 @@ import { icons, timeLine } from '../../stores/data';
       <h3 tracking-wide>زمانبندی</h3>
     </div>
 
-    <div class="fmha4u">
-      <div v-for="detail in timeLine" :key="detail" mb-7>
-        <h4 class="msjys">{{ detail.title }}</h4>
-        <h6 class="nnjlnh">{{ detail.message }}</h6>
-      </div>
-    </div>
-
-    <div class="ozhp7e -rotate-90">
-      <!-- #2196f3 -->
-      <img :src="icons.timeLine.like1" class="arkq5k rotate-90 bg-#2196f3">
-      <div class="border-#f44336 k8wcgg"></div>
-      <img :src="icons.timeLine.tick" class="arkq5k rotate-90 bg-#ff9800">
-      <div class="border-#ff9800 k8wcgg"></div>
-      <img :src="icons.timeLine.like2" class="arkq5k rotate-90 bg-#f44336 ml-1">
+    <div v-for="detail in timeLine" :key="detail" class="j16j2">
+      <div class="d424t"></div>
+      <ul>
+        <li pb5>
+          <div class="p7v3cs">
+            <img :src="detail.icon" class="ngeyly" />
+            <h4 class="q6yexc">{{ detail.title }}</h4>
+          </div>
+          <div pr-12>
+            <p class="sxt68f">{{ detail.message }}</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .bgwhit {
   --un-shadow-inset: var(--un-empty,
-      /*!*/
-      /*!*/
+
     );
   --un-shadow: 0 0 #0000;
 }
@@ -40,6 +39,7 @@ import { icons, timeLine } from '../../stores/data';
   position: relative;
   border-radius: 0.25rem;
   margin-top: 0.5rem;
+  height: 100%;
   --un-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--un-bg-opacity));
   --un-shadow: var(--un-shadow-inset) 0 1px 3px 0 var(--un-shadow-color, rgba(0, 0, 0, 0.1)), var(--un-shadow-inset) 0 1px 2px -1px var(--un-shadow-color, rgba(0, 0, 0, 0.1));
@@ -59,48 +59,93 @@ import { icons, timeLine } from '../../stores/data';
   filter: invert(46%) sepia(47%) saturate(2485%) hue-rotate(185deg) brightness(98%) contrast(95%);
 }
 
-.fmha4u {
-  margin-top: 1.25rem;
-  padding-right: 3.5rem;
-  padding-left: 1rem;
-  padding-bottom: 1.75rem;
+.j16j2 {
+  position: relative;
+  margin-top: 0.5rem;
+  max-width: 42rem;
 }
 
-.msjys {
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  letter-spacing: -0.05em;
+.j16j2:last-child div {
+  border: none;
 }
 
-.nnjlnh {
-  font-size: 0.6rem;
-  font-weight: 1;
-  line-height: 1.25rem;
+.j16j2:first-child div {
+  border-color: #2f3 !important;
 }
 
-.ozhp7e {
+.j16j2:last-child ul {
+  padding-bottom: 2rem;
+}
+
+.j16j2:last-child ul li .p7v3cs img {
+  background-color: #2196f3;
+}
+
+.j16j2:nth-child(2) ul li .p7v3cs img {
+  background-color: #219;
+}
+
+.d424t {
   position: absolute;
-  top: 13.7rem;
-  right: -7.2rem;
-  width: 94%;
+  top: 2.25rem;
+  right: 1.2rem;
+  height: 70%;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-color: #f449;
+}
+
+.p7v3cs {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.arkq5k {
-  width: 1.85rem;
+.p7v3cs:first-child img {
+  background-color: #ff9800;
+}
+
+.ngeyly {
+  margin-right: 0.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
   border-radius: 9999px;
-  padding: 0.425rem;
+  --un-bg-opacity: 1;
+  padding: 5px;
   filter: invert(100%) sepia(10%) saturate(100%) hue-rotate(339deg) brightness(105%) contrast(103%);
 }
 
-.k8wcgg {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  width: 8.75rem;
-  border-width: 2px;
-  border-style: solid;
-  opacity: 0.5;
+.q6yexc {
+  margin-right: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.05em;
+}
+
+.sxt68f {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  --un-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--un-text-opacity));
+}
+
+@media(min-width: 640px) {
+  .sxt68f {
+    font-size: 0.8rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bgwhit {
+    margin-top: 0rem
+  }
+
+  .sxt68f {
+    line-height: 1.25rem;
+    width: 90%;
+  }
+
 }
 </style>

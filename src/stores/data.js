@@ -164,11 +164,9 @@ export const icons = {
   ],
   timeLine: {
     clock: 'https://api.iconify.design/ic:sharp-access-time.svg',
-    like1: 'https://api.iconify.design/ant-design:like-filled.svg',
-    tick: 'https://api.iconify.design/ri:check-double-fill.svg',
-    like2: 'https://api.iconify.design/bxs:like.svg'
   },
-  search: 'https://api.iconify.design/material-symbols:search.svg'
+  search: 'https://api.iconify.design/material-symbols:search.svg',
+  arrowDown: 'https://api.iconify.design/ic:sharp-arrow-drop-down.svg'
 }
 
 export const cardSocial = [
@@ -241,6 +239,24 @@ export const usersInfo = reactive({
       lastMessage: '۰۵:۰۰',
       compeleted: false
     },
+    {
+      id: '6',
+      img: 'https://joeschmoe.io/api/v1/male/joe',
+      name: 'بهداد ارژنگ',
+      job: 'اپراتور',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۰۵:۰۰',
+      compeleted: false
+    },
+    {
+      id: '7',
+      img: 'https://joeschmoe.io/api/v1/male/joe',
+      name: 'رسول شاپور',
+      job: 'توسعه‌دهنده',
+      message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+      lastMessage: '۰۵:۰۰',
+      compeleted: false
+    },
   ]
 })
 
@@ -249,16 +265,20 @@ export const timeLine = [
     title: 'عرفان طاهری این محصول را پسندید',
     message:
       ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+    icon: 'https://api.iconify.design/ant-design:like-filled.svg',
   },
   {
     title: 'بروزرسانی محصولات',
     message:
       ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+    icon: 'https://api.iconify.design/ri:check-double-fill.svg',
+
   },
   {
     title: 'ارژنگ بهداد این محصول را پسندید',
     message:
       ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
+    icon: 'https://api.iconify.design/bxs:like.svg'
   }
 ]
 

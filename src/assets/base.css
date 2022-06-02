@@ -34,12 +34,31 @@ p {
 	color: rgb(31, 41, 55);
 }
 
+/* select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 1px;
+	text-overflow: '';
+} */
+
+select {
+	background: url("https://api.iconify.design/ic:sharp-arrow-drop-down.svg") no-repeat;
+	background-position: calc(100% - 0.75rem) center !important;
+	-moz-appearance: none !important;
+	-webkit-appearance: none !important;
+	appearance: none !important;
+	padding-right: 2rem !important;
+	font-size: 0.7rem;
+	margin-top: 0.1rem;
+	height: 100%;
+}
+
 ::-webkit-scrollbar {
 	width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #f1f1f1;
+	background: #fff;
 	border-radius: 8px;
 }
 

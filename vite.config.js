@@ -18,12 +18,8 @@ export default defineConfig({
       transformerDirectives(),
       transformerVariantGroup(),
       transformerCompileClass({
-        trigger: ":-:",
+        trigger: "=",
         classPrefix: "",
-        // generate random hash and start with letter and length of 6 with capital and lowercase
-        hashFn: (str) => {
-          return Math.random().toString(36).substr(2, 6)
-        }
       })
     ]
   })],
