@@ -1,9 +1,11 @@
 <h2 dir="rtl">معرفی</h2>
-<p dir="rtl"><strong><a href="https://rtl-vue-panel.netlify.app/">RLTVuePanel</a></strong> یک قالب کاملا رسپانسیو است که برای ایجاد پنل مدیریت زیبا ایجاد شده است. این قالب بر اساس فریمورک <a href="https://uno.antfu.me/">ٔUnocss</a> پیاده سازی شده و کاملا قابل شخصی سازی است.</p>
+<p dir="rtl"><strong><a href="https://rtl-vue-panel.netlify.app/">RLTVuePanel</a></strong> یک قالب کاملا رسپانسیو است که برای ایجاد پنل مدیریت زیبا ایجاد شده است. این قالب بر اساس فریمورک <a href="https://uno.antfu.me/">ٔUnocss</a> پیاده سازیش کرده‌ام .</p>
 
 <p dir="rtl"><a href="https://rtl-vue-panel.netlify.app/">دمو آنلاین</a></p>
 
-![js to vue](./src/assets/images/dashboardpng.png)
+<p dir="rtl">قابل ذکر است که این قالب توسط <strong>Quasar Framework</strong> پیاده سازی شده اما توسط امید دلکش به VueJs خام پیاده سازی فارسی سازی شده و از این به بعد بر اساس این ورژن توسعه داده می شود.</p>
+
+![js to vue](./src/assets/images/dashboard.png)
 
 <p dir="rtl">این قالب با استفاده از VueJs و UnoCss توسعه داده شده است.</p>
 
@@ -11,7 +13,7 @@
 
 <h4 dir="rtl">دانلود</h4>
 
-<p dir="rtl">شما میتوانید هم از طریق گیت هاب و هم از طریق وبسایت راکت اقدام به دانلود این قالب کنید.</p>
+<p dir="rtl">شما میتوانید از طریق گیت هاب اقدام به دانلود این قالب کنید.</p>
 
 <h4 dir="rtl">استفاده از رابط کامندی</h4>
 
@@ -49,3 +51,4 @@ git clone https://github.com/Dellcash/RTL-admin-dashboard.git
 </ul>
 
 <h2 dir="rtl">لایسنس</h2>
+<p dir="rtl">لایسنس این پروژه متعلق به <strong><a href="https://github.com/pratik227/pratik227">pratik227</a></strong> میباشد . و بدلیل اوپن سورس بودن آن من توانستم آن را به شکل فارسی در آورده و در اختیار شما قرار دهم.</p>
