@@ -3,7 +3,7 @@
 
 <p dir="rtl"><a href="https://rtl-vue-panel.netlify.app/">دمو آنلاین</a></p>
 
-<p dir="rtl">قابل ذکر است که این قالب توسط <strong>Quasar Framework</strong> پیاده سازی شده اما توسط امید دلکش به VueJs خام پیاده سازی فارسی سازی شده و از این به بعد بر اساس این ورژن توسعه داده می شود.</p>
+<p dir="rtl">قابل ذکر است که این قالب توسط <strong>Quasar Framework</strong> پیاده سازی شده اما توسط امید دلکش به VueJs خام پیاده سازی و فارسی سازی شده و از این به بعد بر اساس این ورژن توسعه داده می شود.</p>
 
 ![js to vue](./src/assets/images/dashboard.png)
 
