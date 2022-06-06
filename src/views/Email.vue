@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  email
+  <div>email</div>
 </template>
 
 <style lang="scss" scoped>

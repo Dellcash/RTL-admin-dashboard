@@ -1,9 +1,9 @@
 <h2 dir="rtl">معرفی</h2>
-<p dir="rtl"><strong><a href="https://rtl-vue-panel.netlify.app/">RLTVuePanel</a></strong> یک قالب کاملا رسپانسیو است که برای ایجاد پنل مدیریت زیبا ایجاد شده است. این قالب بر اساس فریمورک <a href="https://uno.antfu.me/">ٔUnocss</a> پیاده سازیش کرده‌ام .</p>
+<p dir="rtl"><strong><a href="https://rtl-vue-panel.netlify.app/">RLTVuePanel</a></strong> یک قالب کاملا رسپانسیو است که برای ایجاد پنل مدیریت زیبا ایجاد شده است. این قالب را بر اساس فریمورک <a href="https://uno.antfu.me/">ٔUnocss</a> پیاده سازیش رو انجام دادم .</p>
 
 <p dir="rtl"><a href="https://rtl-vue-panel.netlify.app/">دمو آنلاین</a></p>
 
-<p dir="rtl">قابل ذکر است که این قالب توسط <strong>Quasar Framework</strong> پیاده سازی شده اما توسط امید دلکش به VueJs خام پیاده سازی و فارسی سازی شده و از این به بعد بر اساس این ورژن توسعه داده می شود.</p>
+<p dir="rtl">قابل ذکر است که این قالب توسط <strong>Quasar Framework</strong> پیاده سازی شده اما توسط بنده "امید دلکش" به VueJs خام پیاده سازی و فارسی سازی شده و از این به بعد بر اساس این ورژن توسعه داده می شود.</p>
 
 ![js to vue](./src/assets/images/dashboard.png)
 

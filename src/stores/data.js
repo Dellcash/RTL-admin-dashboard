@@ -166,7 +166,8 @@ export const icons = {
     clock: 'https://api.iconify.design/ic:sharp-access-time.svg',
   },
   search: 'https://api.iconify.design/material-symbols:search.svg',
-  arrowDown: 'https://api.iconify.design/ic:sharp-arrow-drop-down.svg'
+  arrowDown: 'https://api.iconify.design/ic:sharp-arrow-drop-down.svg',
+  chart: 'https://api.iconify.design/ph:chart-line-bold.svg'
 }
 
 export const cardSocial = [
@@ -189,6 +190,29 @@ export const cardSocial = [
     icon: 'https://api.iconify.design/material-symbols:bar-chart.svg',
     number: '۱۹۵۱',
     title: 'بازدید کننده'
+  }
+]
+
+export const crmSocial = [
+  {
+    icon: 'https://api.iconify.design/fa-solid:money-check.svg',
+    number: '۲۰۰ ریال',
+    title: 'درآمد ماهیانه'
+  },
+  {
+    icon: 'https://api.iconify.design/mdi:chart-sankey.svg',
+    number: '۵۰۰ ریال',
+    title: 'فروش هفتگی'
+  },
+  {
+    icon: 'https://api.iconify.design/ph:chart-line-up-bold.svg',
+    number: '۴۰',
+    title: 'مشتری‌های جدید'
+  },
+  {
+    icon: 'https://api.iconify.design/zondicons:user.svg',
+    number: '۱۹',
+    title: 'کاربرهای فعال'
   }
 ]
 

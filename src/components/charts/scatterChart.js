@@ -151,6 +151,13 @@ export default defineComponent({
         legend: {
           display: false,
         },
+        tooltip: {
+          rtl: true,
+          bodyFont: {
+            family: 'IRANSans'
+          },
+          boxPadding: 2
+        },
       },
       scales: {
         y: {

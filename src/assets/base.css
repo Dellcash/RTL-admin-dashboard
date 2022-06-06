@@ -34,13 +34,6 @@ p {
 	color: rgb(31, 41, 55);
 }
 
-/* select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	text-indent: 1px;
-	text-overflow: '';
-} */
-
 select {
 	background: url("https://api.iconify.design/ic:sharp-arrow-drop-down.svg") no-repeat;
 	background-position: calc(100% - 0.75rem) center !important;

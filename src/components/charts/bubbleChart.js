@@ -97,6 +97,13 @@ export default defineComponent({
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        tooltip: {
+          rtl: true,
+          bodyFont: {
+            family: 'IRANSans'
+          },
+          boxPadding: 2
+        },
         legend: {
           display: false,
         },

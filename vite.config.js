@@ -18,8 +18,8 @@ export default defineConfig({
       transformerDirectives(),
       transformerVariantGroup(),
       transformerCompileClass({
-        trigger: "=",
-        classPrefix: "",
+        // trigger: "=",
+        // classPrefix: "",
       })
     ]
   })],

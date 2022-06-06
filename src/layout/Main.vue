@@ -63,12 +63,13 @@ onMounted(() => {
 				</div>
 			</header>
 
-			<router-view v-slot="{ Component }">
+			<!-- <router-view v-slot="{ Component }">
 				<transition mode="out-in" enter-active-class="animate__animated animate__fadeIn"
 					leave-active-class="animate__animated animate__fadeOut">
 					<component :is="Component" />
 				</transition>
-			</router-view>
+			</router-view> -->
+			<RouterView />
 		</div>
 
 		<Transition enter-active-class="animate__animated animate__fadeIn"
@@ -355,6 +356,10 @@ onMounted(() => {
 	outline-offset: 2px;
 }
 
+.c31cid:hover {
+	--un-bg-opacity: 1;
+	background-color: rgba(48, 48, 48, var(--un-bg-opacity));
+}
 
 .ut4ofj {
 	margin-right: 2rem;
