@@ -167,7 +167,8 @@ export const icons = {
   },
   search: 'https://api.iconify.design/material-symbols:search.svg',
   arrowDown: 'https://api.iconify.design/ic:sharp-arrow-drop-down.svg',
-  chart: 'https://api.iconify.design/ph:chart-line-bold.svg'
+  chart: 'https://api.iconify.design/ph:chart-line-bold.svg',
+  basket: 'https://api.iconify.design/bi:basket2-fill.svg'
 }
 
 export const cardSocial = [
@@ -303,6 +304,50 @@ export const timeLine = [
     message:
       ' طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید. ',
     icon: 'https://api.iconify.design/bxs:like.svg'
+  }
+]
+
+export const latestSales = [
+  {
+    id: 1,
+    productImg: 'https://m.media-amazon.com/images/I/71czD50UQ5L._AC_UL1500_.jpg',
+    productId: 'DGREgs',
+    product: 'کوله کوهنوردی',
+    total: '۱۷٬۰۰۰ تومان',
+    status: 'ارسال شده',
+    userImg: 'https://joeschmoe.io/api/v1/male/josh',
+    username: 'عرفان طاهری',
+  },
+  {
+    id: 2,
+    productImg: 'https://m.media-amazon.com/images/I/61Vuot5ILFL._AC_SL1500_.jpg',
+    productId: 'GJEII',
+    product: 'اره',
+    total: '۵٬۰۰۰ تومان',
+    status: 'پرداخت شده',
+    userImg: 'https://joeschmoe.io/api/v1/male/james',
+    username: 'شاپور پیردوست',
+
+  },
+  {
+    id: 3,
+    productImg: 'https://m.media-amazon.com/images/I/71fb7xILoyL._AC_SL1500_.jpg',
+    productId: 'DpjgwG',
+    product: 'آتش‌زا',
+    total: '۲٬۰۰۰ تومان',
+    status: 'معلق',
+    userImg: 'https://joeschmoe.io/api/v1/male/joe',
+    username: 'بهداد ارژنگ',
+  },
+  {
+    id: 1,
+    productImg: 'https://static.h2r-equipements.com/23491-thickbox_default/campingaz-camping-micro-plus.jpg',
+    productId: 'PUEghe',
+    product: 'اجاق کمپینگ',
+    total: '۸٬۰۰۰ تومان',
+    status: 'لغو شده',
+    userImg: 'https://joeschmoe.io/api/v1/male/james',
+    username: 'هوشنگ حسینی',
   }
 ]
 

@@ -17,10 +17,7 @@ export default defineConfig({
     transformers: [
       transformerDirectives(),
       transformerVariantGroup(),
-      transformerCompileClass({
-        // trigger: "=",
-        // classPrefix: "",
-      })
+      transformerCompileClass()
     ]
   })],
   resolve: {
