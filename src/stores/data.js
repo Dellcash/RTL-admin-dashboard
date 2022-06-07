@@ -351,6 +351,24 @@ export const latestSales = [
   }
 ]
 
+export const crmCarousel = [
+  {
+    img: 'https://quasar-admin-demo.netlify.app/img/coding.1a850e0e.jpeg',
+    title: 'هرکاری که دلت می‌خواد انجام بده.اما بدون داری چیکار می‌کنی!',
+    author: 'توسط دلکش'
+  },
+  {
+    img: 'https://quasar-admin-demo.netlify.app/img/lookgood.9b0772e2.jpeg',
+    title: 'همیشه طبق برنامه‌ای که چیندی پیش برو.',
+    author: 'توسط دلکش'
+  },
+  {
+    img: 'https://quasar-admin-demo.netlify.app/img/trawel.c87a1818.jpeg',
+    title: 'هرموقع تونستی حتما سفر برو حتی یک روزه!',
+    author: 'توسط دلکش'
+  },
+]
+
 export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
 

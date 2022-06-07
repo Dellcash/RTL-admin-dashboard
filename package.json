@@ -13,7 +13,8 @@
     "unocss": "^0.34.1",
     "vue": "^3.2.33",
     "vue-chartjs": "^4.1.1",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "vue3-carousel": "^0.1.40"
   },
   "devDependencies": {
     "@unocss/preset-attributify": "^0.34.1",

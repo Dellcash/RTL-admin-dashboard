@@ -9,6 +9,7 @@ import Message from '../components/tabs/each/Message.vue';
 import Avatar from '../components/tabs/each/Avatar.vue';
 import { icons, usersInfo } from '../stores/data';
 import { computed } from '@vue/reactivity';
+import CrmCarousel from '../components/crm/CrmCarousel.vue';
 
 const randomInfo = computed(() => {
   return usersInfo.users.sort(() => Math.random() - 0.5);
@@ -22,7 +23,7 @@ const randomInfo = computed(() => {
 
     <CrmTable mt2 />
 
-    <div mt2>
+    <div mt2 lg="gzoddt">
       <TabSocial>
         <Tab title="مخاطبین" :icon="icons.tabs.contact" pb2>
           <Contact v-for="user in usersInfo.users.slice(0, 5)" :key="user" :user="user" />
@@ -34,9 +35,20 @@ const randomInfo = computed(() => {
           <Avatar v-for="avatar in icons.tabs.notificationTab" :key="avatar" :avatar="avatar" />
         </Tab>
       </TabSocial>
+
+      <CrmCarousel />
     </div>
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
+@media (min-width: 1024px) {
+  [lg~="gzoddt"] {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+  }
+}
 </style>
