@@ -39,7 +39,7 @@ export const icons = {
       {
         title: 'قفل صفحه',
         icon: 'https://api.iconify.design/material-symbols:lock-clock.svg',
-        link: '#'
+        link: '/lock'
       },
       {
         title: 'قفل صفحه ۲',

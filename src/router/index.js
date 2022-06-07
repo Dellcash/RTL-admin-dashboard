@@ -9,13 +9,19 @@ const router = createRouter({
       name: 'Main',
       component: Main,
       children: [
-        { path: '', component: () => import('../views/Dashboard.vue') },
-        { path: '/crm', component: () => import('../views/CRM.vue') },
-        { path: '/email', component: () => import('../views/Email.vue') },
+        { path: '', component: () => import('../views/Dashboard.vue'), meta: { title: 'داشبودر' } },
+        { path: '/crm', component: () => import('../views/CRM.vue'), meta: { title: 'داشبورد crm' } },
       ]
     },
-    { path: '/login', component: () => import('../views/Login.vue') }
+    { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },
+    { path: '/lock', component: () => import('../views/Lock.vue'), meta: { title: 'قفل' } }
   ]
+})
+
+
+router.beforeEach((to, from, next) => {
+  document.title = `پنل مدیریت | ${to.meta.title}`
+  next()
 })
 
 export default router

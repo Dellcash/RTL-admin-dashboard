@@ -3,9 +3,7 @@ import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 
-const form = reactive({
-  username: '',
-  usernameErr: '',
+const password = reactive({
   pass: '',
   passErr: ''
 })
@@ -13,18 +11,16 @@ const form = reactive({
 const router = useRouter()
 const loading = ref(false)
 const validation = () => {
-  if (form.username === '') {
-    form.usernameErr = 'لطفا نام کاربری خود را وارد کنید!'
+  if (password.pass === '') {
+    password.passErr = 'لطفا رمز خود را وارد کنید!'
+    setTimeout(() => {
+      password.passErr = ''
+    }, 2000);
   } else {
-    form.usernameErr = ''
-  }
-  if (form.pass === '') {
-    form.passErr = 'لطفا رمز خود را وارد کنید!'
-  } else {
-    form.passErr = ''
+    password.passErr = ''
   }
 
-  if (form.username !== '' && form.pass !== '') {
+  if (password.pass !== '') {
     loading.value = true
     setTimeout(() => {
       router.push('/')
@@ -37,22 +33,21 @@ const validation = () => {
   <div class="i2zeiw">
     <div class="v80bq8">
       <div class="f2z5cv">
-        <img src="https://joeschmoe.io/api/v1/male/jacques" class="c8rsfp">
-        <h4 text-center>ورود</h4>
+        <img src="https://joeschmoe.io/api/v1/male/james" class="c8rsfp">
+        <h4 text-center>امید دلکش</h4>
       </div>
       <form @submit.prevent="validation" space-y-3>
         <div>
-          <input v-model="form.username" type="text" placeholder="نام کاربری" class="hto0a2 placeholder-tracking-tight">
-          <h6 class="qb9ah6">{{ form.usernameErr }}</h6>
+          <input v-model="password.pass" type="password" placeholder="پسورد" class="hto0a2 placeholder-tracking-tight">
+          <span class="focus-border"></span>
+          <h6 v-if="password.passErr" class="qb9ah6">{{ password.passErr }}</h6>
         </div>
-        <div>
-          <input v-model="form.pass" type="password" placeholder="پسورد" class="hto0a2 placeholder-tracking-tight">
-          <h6 class="qb9ah6">{{ form.passErr }}</h6>
+        <div class="flex justify-center">
+          <button class="nfx6rc">
+            <span v-if="!loading">ورود</span>
+            <span v-else>. . .</span>
+          </button>
         </div>
-        <button class="nfx6rc">
-          <span v-if="!loading">ورود</span>
-          <span v-else>. . .</span>
-        </button>
       </form>
     </div>
   </div>
@@ -64,13 +59,14 @@ const validation = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  --un-gradient-from: rgba(34, 197, 94, var(--un-from-opacity, 1));
+  --un-gradient-from: rgba(239, 68, 68, var(--un-from-opacity, 1));
   --un-gradient-stops: var(--un-gradient-from), var(--un-gradient-to, rgba(255, 255, 255, 0));
   --un-gradient-to: rgba(59, 130, 246, var(--un-to-opacity, 1));
   --un-gradient-shape: to top left;
   --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
   background-image: linear-gradient(var(--un-gradient));
 }
+
 
 .v80bq8 {
   position: relative;
@@ -79,7 +75,7 @@ const validation = () => {
   --un-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--un-bg-opacity));
   padding: 0.75rem;
-  padding-top: 7.5rem;
+  padding-top: 6.5rem;
 }
 
 .f2z5cv {
@@ -107,27 +103,55 @@ const validation = () => {
 }
 
 .hto0a2 {
+  position: relative;
   width: 100%;
-  border-radius: 0.25rem;
-  border-style: none;
-  background-color: rgba(209, 213, 219, 0.5);
-  padding: 0.75rem;
-  transition-duration: 250ms;
+  border: 0;
+  padding: 7px 0;
+  border-bottom: 1px solid #ccc;
 }
 
-.hto0a2:hover {
-  background-color: rgba(209, 213, 219, 0.8);
+.hto0a2:focus~.focus-border {
+  width: 100%;
+  transition: 0.4s;
 }
+
+.hto0a2~.focus-border {
+  position: absolute;
+  bottom: 59px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: 0.4s;
+}
+
+.hto0a2:focus~.focus-border {
+  width: 92%;
+  transition: 0.4s;
+  left: 12px;
+}
+
+.qb9ah6 {
+  position: absolute;
+  top: 5.5rem;
+  font-weight: 1;
+  right: 27%;
+  border-radius: 0.25rem;
+  --un-bg-opacity: 1;
+  background-color: rgba(248, 113, 113, var(--un-bg-opacity));
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --un-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--un-text-opacity));
+}
+
+
 
 .hto0a2:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.qb9ah6 {
-  font-weight: 1;
-  --un-text-opacity: 1;
-  color: rgba(248, 113, 113, var(--un-text-opacity));
 }
 
 .nfx6rc {
@@ -150,13 +174,5 @@ const validation = () => {
 .nfx6rc:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-@media (min-width: 640px) {
-  .v80bq8 {
-    width: 400px;
-    padding: 1.25rem;
-    padding-top: 7.5rem;
-  }
 }
 </style>
