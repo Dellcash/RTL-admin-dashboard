@@ -34,7 +34,7 @@ export const icons = {
       {
         title: 'ورود',
         icon: 'https://api.iconify.design/ri:login-box-fill.svg',
-        link: '#'
+        link: '/login'
       },
       {
         title: 'قفل صفحه',
