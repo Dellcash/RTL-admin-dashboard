@@ -26,17 +26,17 @@ date.value = date.value.toLocaleString('fa-IR', options)
 
     <table class="bdkrix">
       <thead>
-        <tr>
-          <th pr-5>
+        <tr class="gnkq0q">
+          <th p="b3 r5">
             <h5>محصول</h5>
           </th>
-          <th>
+          <th pb3>
             <h5>خریدار</h5>
           </th>
-          <th>
+          <th pb3>
             <h5>جمع کل</h5>
           </th>
-          <th>
+          <th pb3>
             <h5>وضعیت</h5>
           </th>
         </tr>
@@ -126,6 +126,13 @@ date.value = date.value.toLocaleString('fa-IR', options)
   width: 3rem;
   height: 3rem;
   object-fit: cover;
+}
+
+.gnkq0q {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  --un-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--un-border-opacity));
 }
 
 .c0a5dr {
