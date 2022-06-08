@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
-
+import { icons } from '../stores/data';
 
 const password = reactive({
   pass: '',
@@ -27,20 +27,30 @@ const validation = () => {
     }, 2000);
   }
 }
+
+const type = ref(false)
 </script>
 
 <template>
   <div class="i2zeiw">
     <div class="v80bq8">
       <div class="f2z5cv">
-        <img src="https://joeschmoe.io/api/v1/male/james" class="c8rsfp">
+        <img src="../assets/images/james.svg" class="c8rsfp">
         <h4 text-center>امید دلکش</h4>
       </div>
       <form @submit.prevent="validation" space-y-3>
         <div>
-          <input v-model="password.pass" type="password" placeholder="پسورد" class="hto0a2 placeholder-tracking-tight">
+          <input v-model="password.pass" :type="type === false ? 'password' : 'text'" placeholder="پسورد"
+            class="hto0a2">
+          <div class="bba3qs" @click="type = !type">
+            <img v-if="type" :src="icons.eye" w5>
+            <img v-else :src="icons.eyeOff" w5>
+          </div>
           <span class="focus-border"></span>
-          <h6 v-if="password.passErr" class="qb9ah6">{{ password.passErr }}</h6>
+          <Transition mode="out-in" enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOut">
+            <h6 v-if="password.passErr" class="qb9ah6">{{ password.passErr }}</h6>
+          </Transition>
         </div>
         <div class="flex justify-center">
           <button class="nfx6rc">
@@ -106,8 +116,15 @@ const validation = () => {
   position: relative;
   width: 100%;
   border: 0;
-  padding: 7px 0;
+  padding: 7px;
   border-bottom: 1px solid #ccc;
+  transition: 0.4s;
+  outline: none;
+}
+
+.hto0a2:hover {
+  border: 0;
+  border-bottom: 1px solid #000
 }
 
 .hto0a2:focus~.focus-border {
@@ -131,6 +148,13 @@ const validation = () => {
   left: 12px;
 }
 
+.bba3qs {
+  position: absolute;
+  top: 7rem;
+  left: 1.25rem;
+  cursor: pointer;
+}
+
 .qb9ah6 {
   position: absolute;
   top: 5.5rem;
@@ -146,8 +170,6 @@ const validation = () => {
   --un-text-opacity: 1;
   color: rgba(255, 255, 255, var(--un-text-opacity));
 }
-
-
 
 .hto0a2:focus {
   outline: 2px solid transparent;

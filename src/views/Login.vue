@@ -37,7 +37,7 @@ const validation = () => {
   <div class="i2zeiw">
     <div class="v80bq8">
       <div class="f2z5cv">
-        <img src="https://joeschmoe.io/api/v1/male/jacques" class="c8rsfp">
+        <img src="../assets/images/james.svg" class="c8rsfp">
         <h4 text-center>ورود</h4>
       </div>
       <form @submit.prevent="validation" space-y-3>

@@ -44,12 +44,12 @@ export const icons = {
       {
         title: 'قفل صفحه ۲',
         icon: 'https://api.iconify.design/material-symbols:lock-person.svg',
-        link: '#'
+        link: '/lock-2'
       },
       {
-        title: 'تخفیف‌ها',
+        title: 'قیمت‌ها',
         icon: 'https://api.iconify.design/ic:baseline-local-offer.svg',
-        link: '#'
+        link: '/pricing'
       },
       {
         title: 'پروفایل کاربر',
@@ -168,7 +168,9 @@ export const icons = {
   search: 'https://api.iconify.design/material-symbols:search.svg',
   arrowDown: 'https://api.iconify.design/ic:sharp-arrow-drop-down.svg',
   chart: 'https://api.iconify.design/ph:chart-line-bold.svg',
-  basket: 'https://api.iconify.design/bi:basket2-fill.svg'
+  basket: 'https://api.iconify.design/bi:basket2-fill.svg',
+  eye: 'https://api.iconify.design/iconoir:eye-empty.svg',
+  eyeOff: 'https://api.iconify.design/iconoir:eye-off.svg'
 }
 
 export const cardSocial = [

@@ -9,12 +9,14 @@ const router = createRouter({
       name: 'Main',
       component: Main,
       children: [
-        { path: '', component: () => import('../views/Dashboard.vue'), meta: { title: 'داشبودر' } },
+        { path: '', component: () => import('../views/Dashboard.vue'), meta: { title: 'داشبورد' } },
         { path: '/crm', component: () => import('../views/CRM.vue'), meta: { title: 'داشبورد crm' } },
       ]
     },
     { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },
-    { path: '/lock', component: () => import('../views/Lock.vue'), meta: { title: 'قفل' } }
+    { path: '/lock', component: () => import('../views/Lock.vue'), meta: { title: 'قفل' } },
+    { path: '/lock-2', component: () => import('../views/Lock2.vue'), meta: { title: 'قفل' } },
+    { path: '/pricing', component: () => import('../views/Pricing.vue'), meta: { title: 'قیمت‌ها' } }
   ]
 })
 
