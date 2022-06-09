@@ -11,6 +11,7 @@ const router = createRouter({
       children: [
         { path: '', component: () => import('../views/Dashboard.vue'), meta: { title: 'داشبورد' } },
         { path: '/crm', component: () => import('../views/CRM.vue'), meta: { title: 'داشبورد crm' } },
+        { path: '/profile', component: () => import('../views/Profile.vue'), meta: { title: 'پروفایل کاربر' } }
       ]
     },
     { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },

@@ -54,7 +54,7 @@ export const icons = {
       {
         title: 'پروفایل کاربر',
         icon: 'https://api.iconify.design/carbon:user-filled.svg',
-        link: '#'
+        link: '/profile'
       },
       {
         title: 'نگهداری',
@@ -91,7 +91,7 @@ export const icons = {
     {
       title: 'ایمیل',
       icon: 'https://api.iconify.design/material-symbols:mail-rounded.svg',
-      link: '/email'
+      link: '#'
     },
     {
       title: 'جدول درختی',

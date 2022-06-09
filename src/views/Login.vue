@@ -42,11 +42,11 @@ const validation = () => {
       </div>
       <form @submit.prevent="validation" space-y-3>
         <div>
-          <input v-model="form.username" type="text" placeholder="نام کاربری" class="hto0a2 placeholder-tracking-tight">
+          <input v-model="form.username" type="text" placeholder="نام کاربری" class="hto0a2">
           <h6 class="qb9ah6">{{ form.usernameErr }}</h6>
         </div>
         <div>
-          <input v-model="form.pass" type="password" placeholder="پسورد" class="hto0a2 placeholder-tracking-tight">
+          <input v-model="form.pass" type="password" placeholder="پسورد" class="hto0a2">
           <h6 class="qb9ah6">{{ form.passErr }}</h6>
         </div>
         <button class="nfx6rc">
@@ -122,6 +122,7 @@ const validation = () => {
 .hto0a2:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+  background-color: rgba(156, 163, 175, 0.5);
 }
 
 .qb9ah6 {
