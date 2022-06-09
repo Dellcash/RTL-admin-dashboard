@@ -59,7 +59,7 @@ export const icons = {
       {
         title: 'نگهداری',
         icon: 'https://api.iconify.design/carbon:license-maintenance.svg',
-        link: '#'
+        link: '/maintenance'
       }
     ]
   },
@@ -170,7 +170,11 @@ export const icons = {
   chart: 'https://api.iconify.design/ph:chart-line-bold.svg',
   basket: 'https://api.iconify.design/bi:basket2-fill.svg',
   eye: 'https://api.iconify.design/iconoir:eye-empty.svg',
-  eyeOff: 'https://api.iconify.design/iconoir:eye-off.svg'
+  eyeOff: 'https://api.iconify.design/iconoir:eye-off.svg',
+  maintenance: [
+    'https://api.iconify.design/wpf:maintenance.svg',
+    'https://api.iconify.design/mdi:alert.svg'
+  ]
 }
 
 export const cardSocial = [
