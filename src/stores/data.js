@@ -131,7 +131,7 @@ export const icons = {
     {
       title: 'کاتالوگ محصولات',
       icon: 'https://api.iconify.design/carbon:catalog.svg',
-      link: '#'
+      link: '/products'
     }
   ],
   tabs: {
@@ -174,7 +174,10 @@ export const icons = {
   maintenance: [
     'https://api.iconify.design/wpf:maintenance.svg',
     'https://api.iconify.design/mdi:alert.svg'
-  ]
+  ],
+  plus: 'https://api.iconify.design/ic:outline-plus.svg',
+  minus: 'https://api.iconify.design/ic:baseline-minus.svg',
+  addToCart: 'https://api.iconify.design/fontisto:shopping-basket-add.svg'
 }
 
 export const cardSocial = [
@@ -373,6 +376,63 @@ export const crmCarousel = [
     title: 'هرموقع تونستی حتما سفر برو حتی یک روزه!',
     author: 'توسط دلکش'
   },
+]
+
+export const products = [
+  {
+    id: 1,
+    img: 'https://m.media-amazon.com/images/I/71fb7xILoyL._AC_SL1500_.jpg',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    name: 'آتش‌زا',
+    price: '۲٬۰۰۰ تومان',
+    rating: 3,
+  },
+  {
+    id: 2,
+    img: 'https://m.media-amazon.com/images/I/61Vuot5ILFL._AC_SL1500_.jpg',
+    name: 'اره',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    price: '۵٬۰۰۰ تومان',
+    status: 'تمام شده',
+    // status_class: 'absolute right top bg-black text-white',
+    rating: 4,
+  },
+  {
+    id: 3,
+    img: 'https://static.h2r-equipements.com/23491-thickbox_default/campingaz-camping-micro-plus.jpg',
+    name: 'اجاق کمپینگ',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    price: '۸٬۰۰۰ تومان',
+    status: 'تخفیف ۵۰٪',
+    // status_class: 'absolute right-0 top-0 bg-blue-500 text-whtie',
+    rating: 4,
+  },
+  {
+    id: 4,
+    img: 'https://m.media-amazon.com/images/I/71czD50UQ5L._AC_UL1500_.jpg',
+    name: 'کوله کوهنوردی',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    price: '۱۷٬۰۰۰ تومان',
+    rating: 5,
+  },
+  {
+    id: 5,
+    img: 'https://www.ghooch.com/userfiles/product/prd_1308/FX-700-1.jpg',
+    name: 'تبر',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    price: '۸۹٬۰۰۰ تومان',
+    rating: 5,
+  },
+  {
+    id: 1,
+    img: 'https://koohsite.com/wp-content/uploads/p/1/5/9/%D8%A7%D8%AC%D8%A7%D9%82-%D8%A7%D9%84%DA%A9%D9%84%DB%8C-300x300.jpg',
+    name: 'اجاق الکلی',
+    description: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
+    price: '۸٬۰۰۰ تومان',
+    status: 'تخفیف ۳۰٪',
+    // status_class: 'absolute right top bg-black text-white',
+    rating: 4,
+  }
 ]
 
 export const toFarsiNumber = (n) => {
