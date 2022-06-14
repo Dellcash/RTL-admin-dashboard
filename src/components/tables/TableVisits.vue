@@ -34,7 +34,7 @@ const selectedOptions = ref(['۵', '۱۰', '۱۵', '۲۰', '۲۵', '۳۰'])
 
       <div sm="aht1e" lg="ml-10">
         <div class="s9l3a4">
-          <input v-model="search" type="text" class="m205la" placeholder="جستجو...">
+          <input v-model="search" type="text" class="m205la" placeholder="جستجو کاربر">
           <div>
             <button class="qcese4">
               <img :src="icons.search" class="icon">

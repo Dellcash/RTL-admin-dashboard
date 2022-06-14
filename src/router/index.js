@@ -12,7 +12,8 @@ const router = createRouter({
         { path: '', component: () => import('../views/Dashboard.vue'), meta: { title: 'داشبورد' } },
         { path: '/crm', component: () => import('../views/CRM.vue'), meta: { title: 'داشبورد crm' } },
         { path: '/profile', component: () => import('../views/Profile.vue'), meta: { title: 'پروفایل کاربر' } },
-        { path: '/products', component: () => import('../views/Products.vue'), meta: { title: 'محصولات' } }
+        { path: '/products', component: () => import('../views/Products.vue'), meta: { title: 'محصولات' } },
+        { path: '/pagination', component: () => import('../views/Pagination.vue'), meta: { title: 'صفحه بندی' } }
       ]
     },
     { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },
