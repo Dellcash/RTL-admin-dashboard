@@ -1,7 +1,122 @@
 <script setup>
-import { onMounted, ref } from "vue"
-import { icons } from "../stores/data";
-import { RouterView } from "vue-router";
+const icon = ref({
+	header: ['i-carbon-logo-github', 'i-carbon-bullhorn', 'i-carbon-user-avatar'],
+	dashboard: [
+		{
+			title: 'داشبورد',
+			icon: 'i-carbon-dashboard',
+			link: '/'
+		},
+		{
+			title: 'داشبورد CRM',
+			icon: 'i-carbon-dashboard-reference',
+			link: '/crm'
+		}
+	],
+	page: [
+		{
+			title: 'ورود',
+			icon: 'i-carbon-login',
+			link: '/login'
+		},
+		{
+			title: 'قفل صفحه',
+			icon: 'i-carbon-locked',
+			link: '/lock'
+		},
+		{
+			title: 'قفل صفحه ۲',
+			icon: 'i-carbon-unlocked',
+			link: '/lock-2'
+		},
+		{
+			title: 'قیمت‌ها',
+			icon: 'i-carbon-data-definition',
+			link: '/pricing'
+		},
+		{
+			title: 'پروفایل کاربر',
+			icon: 'i-carbon-user-profile',
+			link: '/profile'
+		},
+		{
+			title: 'نگهداری',
+			icon: 'i-carbon-license-maintenance',
+			link: '/maintenance'
+		}
+	],
+	map: {
+		parent: {
+			title: 'نقشه‌ها',
+			icon: 'i-carbon-map',
+			arrow: 'i-carbon-caret-down'
+		},
+		child: [
+			{
+				title: 'نقشه',
+				icon: 'i-carbon-map-center',
+				link: '#',
+			},
+			{
+				title: 'نقشه‌ساز',
+				icon: 'i-carbon-map-identify',
+				link: '#',
+			},
+			{
+				title: 'نمای خیابان',
+				icon: 'i-carbon-map-boundary',
+				link: '#'
+			}
+		]
+	},
+	rest: [
+		{
+			title: 'ایمیل',
+			icon: 'i-carbon-email',
+			link: '#'
+		},
+		{
+			title: 'جدول درختی',
+			icon: 'i-carbon-table-built',
+			link: '#'
+		},
+		{
+			title: 'نمودار',
+			icon: 'i-carbon-chart-error-bar',
+			link: '#'
+		},
+		{
+			title: 'مخاطبین',
+			icon: 'i-carbon-connect',
+			link: '#'
+		},
+		{
+			title: 'تسویه حساب',
+			icon: 'i-carbon-wireless-checkout',
+			link: '#'
+		},
+		{
+			title: 'تقویم',
+			icon: 'i-carbon-calendar',
+			link: '#'
+		},
+		{
+			title: 'وظایف',
+			icon: 'i-carbon-checkmark',
+			link: '#'
+		},
+		{
+			title: 'صفحه بندی',
+			icon: 'i-carbon-application',
+			link: '/pagination'
+		},
+		{
+			title: 'کاتالوگ محصولات',
+			icon: 'i-carbon-catalog',
+			link: '/products'
+		}
+	],
+})
 
 const openDrawer = ref(false)
 const page = ref(false)
@@ -54,21 +169,20 @@ onMounted(() => {
 	<div lg="evfx87">
 		<div lg="pufms">
 			<header class="x468wv">
-				<img @click="openDrawer = !openDrawer" :src="icons.hamburger" class="c2v3ev mb-.7 lg:hidden">
-				<img :src="icons.search" class="c2v3ev hidden lg:block">
-				<div class="mt-1.5">
-					<img :src="icons.github.icon" class="c2v3ev">
-					<img :src="icons.bell.icon" class="mx-3 c2v3ev">
-					<img :src="icons.avatar.icon" class="c2v3ev">
+				<div @click="openDrawer = !openDrawer" class="c2v3ev lg:hidden">
+					<div i-carbon-menu text-6 />
+				</div>
+
+				<div class="c2v3ev hidden lg:block">
+					<div i-carbon-search text-6 />
+				</div>
+				<div class="kagvzm">
+					<div class="c2v3ev" v-for="icon in icon.header" :key="icon">
+						<div :class="icon" text-7 />
+					</div>
 				</div>
 			</header>
 
-			<!-- <router-view v-slot="{ Component }">
-				<transition mode="out-in" enter-active-class="animate__animated animate__fadeIn"
-					leave-active-class="animate__animated animate__fadeOut">
-					<component :is="Component" />
-				</transition>
-			</router-view> -->
 			<RouterView />
 		</div>
 
@@ -96,46 +210,46 @@ onMounted(() => {
 					</div>
 				</div>
 				<!-- DASHBOARD ICONS -->
-				<router-link v-for="dashboard in icons.dashboard" :key="dashboard" :to="dashboard.link"
+				<router-link v-for="dashboard in icon.dashboard" :key="dashboard" :to="dashboard.link"
 					@click="openDrawer = false" class="a02nz2">
-					<img :src="dashboard.icon" class="rq0ho8" />
+					<div :class="dashboard.icon" class="rq0ho8 " />
 					<h6 class="ut4ofj">{{ dashboard.title }}</h6>
 				</router-link>
 
-				<router-link v-for="dashboard in icons.dashboard" :key="dashboard" :to="dashboard.link" class="mt808z">
-					<img :src="dashboard.icon" class="rq0ho8" />
+				<router-link v-for="dashboard in icon.dashboard" :key="dashboard" :to="dashboard.link" class="mt808z">
+					<div :class="dashboard.icon" class="rq0ho8" />
 					<h6 class="ut4ofj">{{ dashboard.title }}</h6>
 				</router-link>
 
 				<!-- PAGE ICONS -->
 				<button @click="page = !page" class="c31cid">
-					<img :src="icons.page.parent.icon" class="rq0ho8">
-					<h6 class="ut4ofj">{{ icons.page.parent.title }}</h6>
-					<img :src="icons.arrow" class="t9q27" :class="page === true ? 'rotate-180' : ''">
+					<div class="rq0ho8 i-carbon-shape-except" />
+					<h6 class="ut4ofj">صفحه‌ها</h6>
+					<div class="i-carbon-chevron-down t9q27" :class="page === true ? 'rotate-180' : ''" />
 				</button>
 				<!-- child -->
 				<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
 					<div v-show="page" mr-7>
-						<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link"
-							@click="openDrawer = false" class="a02nz2">
-							<img :src="page.icon" class="rq0ho8" />
+						<router-link v-for="page in icon.page.slice(0, 4)" :key="page" :to="page.link" @click="openDrawer = false"
+							class="a02nz2">
+							<div :class="page.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ page.title }}</h6>
 						</router-link>
 
-						<router-link v-for="page in icons.page.child.slice(0, 4)" :key="page" :to="page.link" class="mt808z">
-							<img :src="page.icon" class="rq0ho8" />
+						<router-link v-for="page in icon.page.slice(0, 4)" :key="page" :to="page.link" class="mt808z">
+							<div :class="page.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ page.title }}</h6>
 						</router-link>
 
 						<h5 class="uno-4vvqbz">عمومی</h5>
-						<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link"
-							@click="openDrawer = false" class="a02nz2">
-							<img :src="page.icon" class="rq0ho8" />
+						<router-link v-for="page in icon.page.slice(4, 6)" :key="page" :to="page.link" @click="openDrawer = false"
+							class="a02nz2">
+							<div :class="page.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ page.title }}</h6>
 						</router-link>
 
-						<router-link v-for="page in icons.page.child.slice(4, 6)" :key="page" :to="page.link" class="mt808z">
-							<img :src="page.icon" class="rq0ho8" />
+						<router-link v-for="page in icon.page.slice(4, 6)" :key="page" :to="page.link" class="mt808z">
+							<div :class="page.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ page.title }}</h6>
 						</router-link>
 					</div>
@@ -143,34 +257,34 @@ onMounted(() => {
 
 				<!-- MAP ICONS -->
 				<button @click="map = !map" class="c31cid">
-					<img :src="icons.map.parent.icon" class="rq0ho8">
-					<h6 class="ut4ofj">{{ icons.map.parent.title }}</h6>
-					<img :src="icons.arrow" class="t9q27 !mr-47.6%" :class="map === true ? 'rotate-180' : ''">
+					<div class="rq0ho8 i-carbon-map" />
+					<h6 class="ut4ofj">نقشه‌ها</h6>
+					<div class="i-carbon-chevron-down t9q27 !mr-49.2%" :class="map === true ? 'rotate-180' : ''" />
 				</button>
 				<!-- child -->
 				<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
 					<div v-if="map" mr-7>
-						<router-link v-for="map in icons.map.child" :key="map" :to="map.link" @click="openDrawer = false"
+						<router-link v-for="map in icon.map.child" :key="map" :to="map.link" @click="openDrawer = false"
 							class="a02nz2">
-							<img :src="map.icon" class="rq0ho8" />
+							<div :class="map.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ map.title }}</h6>
 						</router-link>
 
-						<router-link v-for="map in icons.map.child" :key="map" :to="map.link" class="mt808z">
-							<img :src="map.icon" class="rq0ho8" />
+						<router-link v-for="map in icon.map.child" :key="map" :to="map.link" class="mt808z">
+							<div :class="map.icon" class="rq0ho8" />
 							<h6 class="ut4ofj">{{ map.title }}</h6>
 						</router-link>
 					</div>
 				</Transition>
 
 				<!-- REST OF ICONS -->
-				<router-link v-for="icon in icons.rest" :key="icon" :to="icon.link" @click="openDrawer = false" class="a02nz2">
-					<img :src="icon.icon" class="rq0ho8" />
+				<router-link v-for="icon in icon.rest" :key="icon" :to="icon.link" @click="openDrawer = false" class="a02nz2">
+					<div :class="icon.icon" class="rq0ho8" />
 					<h6 class="ut4ofj">{{ icon.title }}</h6>
 				</router-link>
 
-				<router-link v-for="icon in icons.rest" :key="icon" :to="icon.link" class="mt808z">
-					<img :src="icon.icon" class="rq0ho8" />
+				<router-link v-for="icon in icon.rest" :key="icon" :to="icon.link" class="mt808z">
+					<div :class="icon.icon" class="rq0ho8" />
 					<h6 class="ut4ofj">{{ icon.title }}</h6>
 				</router-link>
 			</div>
@@ -192,14 +306,13 @@ onMounted(() => {
 	justify-content: space-between;
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 .c2v3ev {
 	--at-apply: "filter-invert-100";
 	cursor: pointer;
-	--un-invert: invert(1);
-	filter: var(--un-filter);
-	width: 2.5rem !important;
 	border-radius: 9999px;
 	padding: 0.5rem;
 	transition-duration: 250ms;
@@ -210,6 +323,21 @@ onMounted(() => {
 	background-color: rgba(156, 163, 175, var(--un-bg-opacity));
 }
 
+.kagvzm {
+	display: flex;
+}
+
+.kagvzm div:nth-child(2) {
+	margin: 0 .3rem;
+}
+
+.kagvzm div:nth-child(2) div {
+	color: #04fbe4;
+}
+
+.kagvzm div:nth-child(3) div {
+	color: #2934d1;
+}
 
 .tm4880 {
 	position: fixed;
@@ -293,7 +421,7 @@ onMounted(() => {
 
 .rq0ho8 {
 	--at-apply: "filter-invert-100";
-	width: 1.5rem;
+	font-size: 1.4rem;
 	cursor: pointer;
 	--un-invert: invert(1);
 	filter: var(--un-filter);
@@ -301,8 +429,8 @@ onMounted(() => {
 
 .t9q27 {
 	--at-apply: "!filter-invert-50 duration-320";
-	width: 1.2rem;
-	margin-right: 45%;
+	font-size: 1rem;
+	margin-right: 46%;
 	cursor: pointer;
 	--un-invert: invert(1);
 	filter: var(--un-filter);

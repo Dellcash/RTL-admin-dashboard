@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-import { latestSales, icons } from '../../stores/data';
+import { latestSales } from '../../stores/data';
 
 const date = ref(new Date());
 const options = {
@@ -14,7 +13,7 @@ date.value = date.value.toLocaleString('fa-IR', options)
 <template>
   <div class="c10kz9 shadow">
     <div class="v60zl9">
-      <img :src="icons.basket" class="y3kgmo">
+      <div i-carbon-shopping-bag class="y3kgmo" />
       <div>
         <h4>آخرین فروش‌ها</h4>
         <p text-10px md:w-80>شما در اینجا می‌توانید با نظارت بر محصولات خود٬ ردیابی وضعیت فروش و حمل و نقل اطلاع داشته
@@ -93,6 +92,7 @@ date.value = date.value.toLocaleString('fa-IR', options)
 .y3kgmo {
   margin-left: 1rem;
   min-width: 3rem;
+  font-size: 4rem;
   filter: invert(48%) sepia(72%) saturate(3225%) hue-rotate(187deg) brightness(102%) contrast(91%);
 }
 

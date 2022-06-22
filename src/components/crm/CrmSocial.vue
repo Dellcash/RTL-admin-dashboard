@@ -1,12 +1,33 @@
 <script setup>
-import { crmSocial } from '../../stores/data';
+const crmSocial = ref([
+  {
+    icon: 'i-carbon-identification',
+    number: '۲۰۰ ریال',
+    title: 'درآمد ماهیانه'
+  },
+  {
+    icon: 'i-carbon-chart-line-smooth',
+    number: '۵۰۰ ریال',
+    title: 'فروش هفتگی'
+  },
+  {
+    icon: 'i-carbon-chart-minimum',
+    number: '۴۰',
+    title: 'مشتری‌های جدید'
+  },
+  {
+    icon: 'i-carbon-user',
+    number: '۱۹',
+    title: 'کاربرهای فعال'
+  }
+])
 </script>
 
 <template>
   <div class="r9ry9r">
     <div v-for="card in crmSocial" :key="card" class="n21bpy">
       <div class="m3ll32">
-        <img :src="card.icon" class="qds0uv">
+        <div :class="card.icon" class="qds0uv" />
       </div>
       <div class="xboo2">
         <h4>{{ card.number }}</h4>
@@ -44,7 +65,6 @@ import { crmSocial } from '../../stores/data';
   background-color: rgb(248, 140, 43);
 }
 
-
 .m3ll32 {
   order: 1;
   padding: .5rem;
@@ -56,14 +76,13 @@ import { crmSocial } from '../../stores/data';
 .qds0uv {
   --at-apply: "filter-invert-10";
   margin-top: 0.35rem;
-  width: 2.8rem;
+  font-size: 2.8rem;
   --un-invert: invert(1);
   filter: var(--un-filter);
 }
 
 .xboo2 {
   margin-right: 1rem;
-  // letter-spacing: 0.1em;
   --un-text-opacity: 1;
   color: rgba(255, 255, 255, var(--un-text-opacity));
 }

@@ -1,8 +1,4 @@
 <script setup>
-import { reactive, ref } from 'vue';
-import { useRouter } from 'vue-router';
-
-
 const form = reactive({
   username: '',
   usernameErr: '',

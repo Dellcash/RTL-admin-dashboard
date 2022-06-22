@@ -1,6 +1,4 @@
 <script setup>
-import { icons } from '@/stores/data'
-
 defineProps({
   user: Object
 })
@@ -15,7 +13,7 @@ defineProps({
         <h6 class="uno-pi707w">{{ user.job }}</h6>
       </div>
     </div>
-    <img :src="icons.tabs.phone" w-6 rotate-180>
+    <div class="i-carbon-phone-filled lgrg7p" />
   </div>
 </template>
 
@@ -59,5 +57,11 @@ defineProps({
   letter-spacing: 0.05em;
   --un-text-opacity: 1;
   color: rgba(156, 163, 175, var(--un-text-opacity));
+}
+
+.lgrg7p {
+  --un-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--un-text-opacity));
+  font-size: 1.5rem;
 }
 </style>

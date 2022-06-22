@@ -1,20 +1,14 @@
-<script setup>
-import linerChart from '../charts/linerChart';
-import PieChart from '../charts/pieChart'
-import { icons } from '../../stores/data';
-</script>
-
 <template>
   <div class="vlji2b">
     <div class="k267k8">
       <h3 class="mhtr0l">محصولات فروخته شده
-        <img :src="icons.chart" class="q2feq1">
+        <div i-carbon-chart-minimum class="q2feq1" />
       </h3>
       <linerChart :height="300" />
     </div>
     <div class="w-full p2">
       <h4 class="r2n14h">محصولات مرجوع شده
-        <img :src="icons.chart" class="q2feq1">
+        <div i-carbon-chart-line-smooth class="q2feq1" />
       </h4>
       <PieChart :height="250" />
     </div>
@@ -24,7 +18,7 @@ import { icons } from '../../stores/data';
 <style scoped>
 .q2feq1 {
   margin-right: 0.5rem;
-  width: 1.75rem;
+  font-size: 1.5rem;
   filter: invert(46%) sepia(93%) saturate(1658%) hue-rotate(184deg) brightness(96%) contrast(98%);
 }
 

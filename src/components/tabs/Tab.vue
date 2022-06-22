@@ -1,6 +1,4 @@
 <script setup>
-import { inject } from 'vue';
-
 defineProps({
   title: String,
   icon: String

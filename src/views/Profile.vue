@@ -1,6 +1,4 @@
 <script setup>
-import { reactive, ref } from 'vue'
-
 const inputs = reactive({
   name: [
     {
@@ -124,13 +122,6 @@ const password = ref(['رمز عبور فعلی', 'رمز عبور جدید', '�
   background-color: rgba(22, 43, 77, var(--un-bg-opacity));
   padding: 1.25rem;
   padding-top: 0.75rem;
-}
-
-.nx2wc5 {
-  margin-bottom: 1.75rem;
-  letter-spacing: 0.025em;
-  --un-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--un-text-opacity));
 }
 
 .nx2wc5 {

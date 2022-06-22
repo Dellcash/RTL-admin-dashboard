@@ -1,12 +1,35 @@
 <script setup>
-import { cardSocial } from '../../stores/data';
+const cardSocial = ref(
+  [
+    {
+      icon: 'i-carbon-user',
+      number: '۲۰۰',
+      title: 'اکانت من'
+    },
+    {
+      icon: 'i-carbon-logo-twitter',
+      number: '۵۰۰',
+      title: 'دنبال کننده'
+    },
+    {
+      icon: 'i-carbon-logo-linkedin',
+      number: '۶۴۰',
+      title: 'رابط'
+    },
+    {
+      icon: 'i-carbon-chart-cluster-bar',
+      number: '۱۹۵۱',
+      title: 'بازدید کننده'
+    }
+  ]
+)
 </script>
 
 <template>
   <div class="r9ry9r">
     <div v-for="card in cardSocial" :key="card" class="n21bpy">
       <div class="m3ll32">
-        <img :src="card.icon" class="qds0uv">
+        <div :class="card.icon" text="white 2rem" />
       </div>
       <div class="xboo2">
         <h4>{{ card.number }}</h4>
@@ -79,14 +102,6 @@ import { cardSocial } from '../../stores/data';
 
 .n21bpy:nth-child(4) .m3ll32 {
   background-color: #9F52B1;
-}
-
-.qds0uv {
-  --at-apply: "filter-invert-10";
-  margin-top: 0.35rem;
-  width: 1.5rem;
-  --un-invert: invert(1);
-  filter: var(--un-filter);
 }
 
 .xboo2 {

@@ -1,8 +1,4 @@
 <script setup>
-import { reactive, ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { icons } from '../stores/data';
-
 const password = reactive({
   pass: '',
   passErr: ''
@@ -43,8 +39,8 @@ const type = ref(false)
           <input v-model="password.pass" :type="type === false ? 'password' : 'text'" placeholder="پسورد"
             class="hto0a2">
           <div class="bba3qs" @click="type = !type">
-            <img v-if="type" :src="icons.eye" w5>
-            <img v-else :src="icons.eyeOff" w5>
+            <div v-if="type" i-carbon-view-filled w5 />
+            <div v-else i-carbon-view-off-filled w5 />
           </div>
           <span class="focus-border"></span>
           <Transition mode="out-in" enter-active-class="animate__animated animate__fadeIn"

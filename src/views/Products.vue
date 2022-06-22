@@ -1,6 +1,5 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
-import { icons, productsInfo } from '../stores/data';
+import { productsInfo } from '../stores/data';
 import vue3starRatings from 'vue3-star-ratings'
 
 const search = ref('')
@@ -41,7 +40,7 @@ watch(search, () => {
           </div>
         </div>
         <h6 class="nkvn86">{{ product.status }}</h6>
-        <img :src="icons.addToCart" class="fttsnp">
+        <div i-carbon-shopping-cart-plus class="fttsnp" />
       </div>
     </section>
   </main>
@@ -205,15 +204,18 @@ section div:last-child .nkvn86 {
 
 .fttsnp {
   position: absolute;
-  top: 11.75rem;
+  top: 12rem;
   left: 1.25rem;
-  width: 2.5rem;
-  border-radius: 9999px;
-  background-color: rgba(224, 242, 254, 0.1);
-  padding: 0.25rem;
-  padding-top: 0.475rem;
-  padding-bottom: 0.475rem;
-  filter: invert(0%) sepia(97%) saturate(7450%) hue-rotate(10deg) brightness(74%) contrast(95%);
+  font-size: 2rem;
+  cursor: pointer;
+  --un-bg-opacity: 1;
+  background-color: rgba(156, 163, 175, var(--un-bg-opacity));
+  transition-duration: 250ms;
+}
+
+.fttsnp:hover {
+  --un-bg-opacity: 1;
+  background-color: rgba(31, 41, 55, var(--un-bg-opacity));
 }
 
 @media (min-width: 640px) {

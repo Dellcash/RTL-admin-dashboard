@@ -1,13 +1,13 @@
 <script setup>
-import { icons, timeLine } from '../../stores/data';
+import { timeLine } from '../../stores/data';
 </script>
 
 
 <template>
   <div class="bgwhit">
     <div class="flexit">
-      <img :src="icons.timeLine.clock" class="ssm251">
-      <h3 tracking-wide>زمانبندی</h3>
+      <div i-carbon-bloch-sphere text="blue 10" />
+      <h3 tracking-wide mr3>زمانبندی</h3>
     </div>
 
     <div v-for="detail in timeLine" :key="detail" class="j16j2">

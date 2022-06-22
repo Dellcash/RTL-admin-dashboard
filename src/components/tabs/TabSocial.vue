@@ -1,6 +1,4 @@
 <script setup>
-import { ref, useSlots, provide } from 'vue';
-
 const props = defineProps({
   title: String,
   icon: String,
@@ -23,12 +21,9 @@ provide('selectedTitle', selectedTitle)
     <div class="kyi2qn">
       <div v-for="title in tabs" :key="title" @click="selectedTitle = title" class="nc6b13">
         <div class="agp57s">
-          <img :src="icons[tabs.indexOf(title)]" class="h7ik6a"
-            :class="[title == selectedTitle ? 'filtered-img' : 'filter-invert-70']" />
-          <h6 :class="[title == selectedTitle ? '!text-blue-500 fromRight' : '']" class="a0v1i5">{{
-              title
-          }}
-          </h6>
+          <div class="h7ik6a"
+            :class="icons[tabs.indexOf(title)], [title == selectedTitle ? 'filtered' : 'filter-invert-70']" />
+          <h6 :class="[title == selectedTitle ? '!text-blue-500 fromRight' : '']" class="a0v1i5">{{ title }}</h6>
         </div>
         <h6 class="oznpso">
           {{ notification[tabs.indexOf(title)] }}
@@ -40,7 +35,7 @@ provide('selectedTitle', selectedTitle)
 </template>
 
 <style>
-.filtered-img {
+.filtered {
   filter: invert(48%) sepia(77%) saturate(3394%) hue-rotate(201deg) brightness(100%) contrast(94%)
 }
 
@@ -80,7 +75,10 @@ provide('selectedTitle', selectedTitle)
 }
 
 .h7ik6a {
-  width: 1.75rem;
+  font-size: 1.75rem;
+  margin-bottom: .3rem;
+  --un-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--un-text-opacity));
   cursor: pointer;
   transition-duration: 100ms;
 }
@@ -88,7 +86,6 @@ provide('selectedTitle', selectedTitle)
 .a0v1i5 {
   width: 100%;
   text-align: center;
-  /* font-weight: 1; */
   letter-spacing: 0.025em;
   --un-text-opacity: 1;
   color: rgba(156, 163, 175, var(--un-text-opacity));

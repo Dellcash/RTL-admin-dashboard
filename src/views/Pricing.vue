@@ -1,20 +1,18 @@
 <script setup>
-import { ref } from 'vue'
-
 const navs = ref([
   {
     title: 'داشبورد',
-    icon: 'https://api.iconify.design/material-symbols:dashboard.svg',
+    icon: 'i-carbon-dashboard',
     to: '/'
   },
   {
     title: 'ورود',
-    icon: 'https://api.iconify.design/ri:login-box-fill.svg',
+    icon: 'i-carbon-login',
     to: '/login'
   },
   {
     title: 'قفل',
-    icon: 'https://api.iconify.design/material-symbols:lock-clock.svg',
+    icon: 'i-carbon-locked',
     to: '/lock'
   }
 ])
@@ -22,25 +20,25 @@ const navs = ref([
 const pricing = ref([
   {
     title: 'پایه',
-    icon: 'https://api.iconify.design/ic:sharp-home-work.svg',
+    icon: 'i-carbon-building',
     price: '۰تومان',
     description: 'این پک برای کمپانی‌های بین ۲ تا ۱۰ نفر مناسب می‌باشد.'
   },
   {
     title: 'کمپانی‌های کوچک',
-    icon: 'https://api.iconify.design/material-symbols:android-google-home.svg',
+    icon: 'i-carbon-home',
     price: '۲۵تومان',
     description: 'این پک برای کمپانی‌های بین ۲ تا ۱۰ نفر مناسب می‌باشد.'
   },
   {
     title: 'تمدید شده',
-    icon: 'https://api.iconify.design/ic:outline-apartment.svg',
+    icon: 'i-carbon-enterprise',
     price: '۲۵۰تومان',
     description: 'این پک برای کمپانی‌های بین ۱۰ تا ۱۰۰ نفر مناسب می‌باشد.'
   },
   {
     title: 'پک ویژه',
-    icon: 'https://api.iconify.design/material-symbols:shopping-bag.svg',
+    icon: 'i-carbon-finance',
     price: '۵۵۰تومان',
     description: 'این پک برای کمپانی‌های بین ۲ تا ۱۰ نفر مناسب می‌باشد.'
   },
@@ -53,8 +51,8 @@ const pricing = ref([
       <h3 class="q7adk0">صفحه قیمت‌ها</h3>
       <div class="p7v3cs">
         <router-link v-for="nav in navs" :key="nav" :to="nav.to" class="q9f34v">
-          <img :src="nav.icon" class="w1rioi">
-          <h5>{{ nav.title }}</h5>
+          <div :class="nav.icon" text-5 />
+          <h5 mr1>{{ nav.title }}</h5>
         </router-link>
       </div>
     </header>
@@ -68,10 +66,12 @@ const pricing = ref([
       <div class="l6wolb">
         <div v-for="price in pricing" :key="price" class="mjo3cl">
           <h3>{{ price.title }}</h3>
-          <img :src="price.icon" class="dustqh">
+          <div :class="price.icon" class="dustqh" />
           <h1>{{ price.price }}</h1>
           <p class="a52c24">{{ price.description }}</p>
-          <button class="s1fr2k">خرید</button>
+          <div>
+            <button class="s1fr2k">خرید</button>
+          </div>
         </div>
       </div>
     </main>
@@ -132,10 +132,6 @@ const pricing = ref([
   margin-left: 1rem
 }
 
-.w1rioi {
-  width: 1.75rem;
-}
-
 .b4bgvz {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -171,6 +167,9 @@ const pricing = ref([
   --un-gradient-shape: to bottom right;
   --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
   background-image: linear-gradient(var(--un-gradient));
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .mjo3cl:nth-child(2) {
@@ -221,8 +220,9 @@ const pricing = ref([
 
 
 .dustqh {
-  width: 4rem;
-  padding-top: 2.5rem;
+  font-size: 4rem;
+  margin-top: 2.5rem;
+  align-self: center;
 }
 
 img {

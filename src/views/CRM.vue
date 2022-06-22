@@ -1,15 +1,29 @@
 <script setup>
-import CrmSocial from '../components/crm/CrmSocial.vue';
-import CrmChart from '../components/crm/CrmChart.vue';
-import CrmTable from '../components/crm/CrmTable.vue';
-import TabSocial from '../components/tabs/TabSocial.vue';
-import Tab from '../components/tabs/Tab.vue';
-import Contact from '../components/tabs/each/Contact.vue';
-import Message from '../components/tabs/each/Message.vue';
-import Avatar from '../components/tabs/each/Avatar.vue';
-import { icons, usersInfo } from '../stores/data';
-import { computed } from '@vue/reactivity';
-import CrmCarousel from '../components/crm/CrmCarousel.vue';
+import { usersInfo } from '../stores/data';
+
+const tabIcon = reactive({
+  contact: 'i-carbon-phone-ip',
+  message: 'i-carbon-email-new',
+  notification: 'i-carbon-notification-new',
+  notificationTab: [
+    {
+      title: 'آواتار اعلان',
+      icon: 'i-carbon-notification',
+    },
+    {
+      title: 'آواتار اعلان',
+      icon: 'i-carbon-notification-filled',
+    },
+    {
+      title: 'آواتار اعلان',
+      icon: 'i-carbon-notification-new',
+    },
+    {
+      title: 'آواتار اعلان',
+      icon: 'i-carbon-notification-off',
+    },
+  ]
+})
 
 const randomInfo = computed(() => {
   return usersInfo.users.sort(() => Math.random() - 0.5);
@@ -25,14 +39,14 @@ const randomInfo = computed(() => {
 
     <div mt2 lg="gzoddt">
       <TabSocial>
-        <Tab title="مخاطبین" :icon="icons.tabs.contact" pb2>
+        <Tab title="مخاطبین" :icon="tabIcon.contact" pb2>
           <Contact v-for="user in usersInfo.users.slice(0, 5)" :key="user" :user="user" />
         </Tab>
-        <Tab title="پیام‌ها" :icon="icons.tabs.message" notification="۶" pb-2>
+        <Tab title="پیام‌ها" :icon="tabIcon.message" notification="۶" pb-2>
           <Message v-for="user in randomInfo.slice(0, 5)" :key="user" :user="user" />
         </Tab>
-        <Tab title="‌اعلان‌ها" :icon="icons.tabs.notification" notification="۴" py-2>
-          <Avatar v-for="avatar in icons.tabs.notificationTab" :key="avatar" :avatar="avatar" />
+        <Tab title="‌اعلان‌ها" :icon="tabIcon.notification" notification="۴" py-2>
+          <Avatar v-for="avatar in tabIcon.notificationTab" :key="avatar" :avatar="avatar" />
         </Tab>
       </TabSocial>
 

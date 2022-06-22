@@ -1,11 +1,8 @@
-<script setup>
-import { icons } from '../stores/data';
-</script>
-
 <template>
   <div class="aq1a3y">
-    <div>
-      <img v-for="icon in icons.maintenance" :key="icon" :src="icon" class="a2bdma">
+    <div flex>
+      <div i-carbon-warning-alt-filled text="20 white" />
+      <div i-carbon-calendar-settings text="20 white" />
     </div>
     <h1 text-white>درحال تعمیر هستیم!</h1>
     <p class="whwe2m">سایت ما تحت تعمیر و نگهداری است. به زودی برمی گردیم.</p>
@@ -25,16 +22,6 @@ import { icons } from '../stores/data';
   --un-gradient-shape: to bottom right;
   --un-gradient: var(--un-gradient-shape), var(--un-gradient-stops);
   background-image: linear-gradient(var(--un-gradient));
-}
-
-.a2bdma {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  width: 5rem;
-}
-
-img {
-  filter: invert(99%) sepia(3%) saturate(947%) hue-rotate(220deg) brightness(117%) contrast(100%);
 }
 
 .whwe2m {

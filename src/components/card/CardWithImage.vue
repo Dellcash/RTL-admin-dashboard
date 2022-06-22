@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="k9mytl">
     <div class="h4kwgm">

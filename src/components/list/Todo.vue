@@ -1,11 +1,11 @@
 <script setup>
-import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
+import { toFarsiNumber, usersInfo } from '../../stores/data';
 </script>
 
 <template>
   <div class="cd8n95">
     <div class="wv650s">
-      <img :src="icons.todo.slice(0, 1)" class="k4lpvh">
+      <div class="k4lpvh i-carbon-calendar" />
       <div text-white>
         <h4>لیست تسک‌ها</h4>
         <h5 fw1>تمامی تسک‌های شما</h5>
@@ -23,7 +23,7 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
               <h6 :class="[task.compeleted === false ? '' : 'line-through']" fw1>توضیحات کار</h6>
             </div>
           </div>
-          <img :src="icons.todo.slice(1, 2)" class="filter-invert-50 w6">
+          <div i-carbon-document text="6 gray" />
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@ import { icons, toFarsiNumber, usersInfo } from '../../stores/data';
 
 .k4lpvh {
   margin-left: 1rem;
-  width: 2.5rem;
-  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(110deg) brightness(98%) contrast(108%);
+  font-size: 3rem;
+  color: #fff;
 }
 
 .i6f4rr {

@@ -1,6 +1,5 @@
 <script setup>
-import { computed, ref, watch } from 'vue';
-import { usersInfo, toFarsiNumber, icons } from '../../stores/data';
+import { usersInfo, toFarsiNumber } from '../../stores/data';
 
 const date = ref(new Date());
 const options = {
@@ -37,12 +36,12 @@ const selectedOptions = ref(['۵', '۱۰', '۱۵', '۲۰', '۲۵', '۳۰'])
           <input v-model="search" type="text" class="m205la" placeholder="جستجو کاربر">
           <div>
             <button class="qcese4">
-              <img :src="icons.search" class="icon">
+              <img i-carbon-search text-5>
             </button>
           </div>
         </div>
 
-        <img :src="icons.bell.icon" class="n6zhu">
+        <img i-carbon-bullhorn class="n6zhu">
         <button class="snydy">استخراج
         </button>
       </div>
@@ -138,8 +137,7 @@ const selectedOptions = ref(['۵', '۱۰', '۱۵', '۲۰', '۲۵', '۳۰'])
   margin-left: 1.25rem;
   margin-right: 1.25rem;
   display: none;
-  width: 2.1rem;
-  height: 2.1rem;
+  font-size: 2.1rem;
   padding: .4rem;
   border-radius: 9999%;
 }
@@ -172,12 +170,8 @@ const selectedOptions = ref(['۵', '۱۰', '۱۵', '۲۰', '۲۵', '۳۰'])
 
 .qcese4 {
   position: absolute;
-  top: 0.45rem;
+  top: 0.60rem;
   left: 0.5rem;
-}
-
-.icon {
-  --at-apply: "w-6 rotate-90 filter-invert-80";
 }
 
 .bdkrix {

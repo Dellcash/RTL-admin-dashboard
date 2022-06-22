@@ -1,10 +1,4 @@
- <script setup>
-import BarChart from '../charts/barChart'
-import BubbleChart from '../charts/bubbleChart'
-import ScatterChart from '../charts/scatterChart'
-</script>
-  
- <template>
+<template>
   <div class="klml95">
     <div class="cxxqlzw">
       <h3 class="vqq276">بازدید امروز کاربرها</h3>
