@@ -15,7 +15,7 @@
   direction: ltr;
   margin-top: 0.5rem;
   border-radius: 0.25rem;
-  background-image: url('https://cdn.quasar.dev/img/parallax1.jpg');
+  background-image: url('../../assets/images/parallax1.jpg');
   background-size: cover;
   background-position: center;
 }

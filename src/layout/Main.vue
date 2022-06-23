@@ -86,6 +86,16 @@ const icon = ref({
 			link: '#'
 		},
 		{
+			title: 'کارت‌ها',
+			icon: 'i-carbon-license-third-party',
+			link: '/cards'
+		},
+		{
+			title: 'جداول',
+			icon: 'i-carbon-table-split',
+			link: '#'
+		},
+		{
 			title: 'مخاطبین',
 			icon: 'i-carbon-connect',
 			link: '#'
@@ -107,7 +117,7 @@ const icon = ref({
 		},
 		{
 			title: 'صفحه بندی',
-			icon: 'i-carbon-application',
+			icon: 'i-carbon-carousel-horizontal',
 			link: '/pagination'
 		},
 		{
@@ -259,7 +269,7 @@ onMounted(() => {
 				<button @click="map = !map" class="c31cid">
 					<div class="rq0ho8 i-carbon-map" />
 					<h6 class="ut4ofj">نقشه‌ها</h6>
-					<div class="i-carbon-chevron-down t9q27 !mr-49.2%" :class="map === true ? 'rotate-180' : ''" />
+					<div class="i-carbon-chevron-down t9q27 !mr-49%" :class="map === true ? 'rotate-180' : ''" />
 				</button>
 				<!-- child -->
 				<Transition name="expand" @enter="enter" @after-enter="afterEnter" @leave="leave">
@@ -356,7 +366,7 @@ onMounted(() => {
 	top: 0rem;
 	right: 0rem;
 	z-index: 9999;
-	width: 260px;
+	width: 280px;
 	height: 100%;
 	overflow-y: scroll;
 	padding-bottom: .8rem;
@@ -517,7 +527,7 @@ onMounted(() => {
 
 	[lg~="pufms"] {
 		order: 1;
-		margin-right: 260px;
+		margin-right: 280px;
 		flex: 1 1 0%;
 	}
 

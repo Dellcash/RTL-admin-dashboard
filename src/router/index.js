@@ -13,7 +13,8 @@ const router = createRouter({
         { path: '/crm', component: () => import('../views/CRM.vue'), meta: { title: 'داشبورد crm' } },
         { path: '/profile', component: () => import('../views/Profile.vue'), meta: { title: 'پروفایل کاربر' } },
         { path: '/products', component: () => import('../views/Products.vue'), meta: { title: 'محصولات' } },
-        { path: '/pagination', component: () => import('../views/Pagination.vue'), meta: { title: 'صفحه بندی' } }
+        { path: '/pagination', component: () => import('../views/Pagination.vue'), meta: { title: 'صفحه بندی' } },
+        { path: '/cards', component: () => import('../views/Cards.vue'), meta: { title: 'کارت‌ها' } }
       ]
     },
     { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },

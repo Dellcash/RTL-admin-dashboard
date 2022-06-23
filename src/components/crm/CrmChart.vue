@@ -8,7 +8,7 @@
     </div>
     <div class="w-full p2">
       <h4 class="r2n14h">محصولات مرجوع شده
-        <div i-carbon-chart-line-smooth class="q2feq1" />
+        <div i-carbon-chart-sunburst class="q2feq1" />
       </h4>
       <PieChart :height="250" />
     </div>
