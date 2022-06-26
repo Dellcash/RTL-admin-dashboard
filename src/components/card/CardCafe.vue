@@ -1,12 +1,14 @@
 <script setup>
-
+defineProps({
+  userImg: String
+})
 </script>
 
 <template>
   <div class="kn805d">
     <div>
       <img src="@/assets/images/chicken-salad.jpg" class="tyu5lc">
-      <img src="@/assets/images/james.svg" class="skso0g">
+      <img :src="userImg" class="skso0g">
       <div p="x3 b3 t10">
         <h5> $ . کافه ایتالیایی</h5>
         <p class="mjlsc9">بشقاب های کوچک، سالاد و ساندویچ در محیطی صمیمی.</p>
@@ -72,5 +74,17 @@
   padding-right: 0.75rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .skso0g {
+    top: 23rem
+  }
+}
+
+@media (min-width: 768px) {
+  .skso0g {
+    top: 16.5rem;
+  }
 }
 </style>

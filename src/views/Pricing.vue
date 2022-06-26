@@ -225,10 +225,6 @@ const pricing = ref([
   align-self: center;
 }
 
-img {
-  filter: invert(99%) sepia(0%) saturate(3719%) hue-rotate(81deg) brightness(115%) contrast(100%);
-}
-
 @media(min-width: 640px) {
   .tm4be9 {
     justify-content: space-between;
