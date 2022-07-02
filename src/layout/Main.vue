@@ -98,7 +98,7 @@ const icon = ref({
 		{
 			title: 'مخاطبین',
 			icon: 'i-carbon-connect',
-			link: '#'
+			link: '/contacts'
 		},
 		{
 			title: 'تسویه حساب',

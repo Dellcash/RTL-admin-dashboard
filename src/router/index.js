@@ -14,7 +14,8 @@ const router = createRouter({
         { path: '/profile', component: () => import('../views/Profile.vue'), meta: { title: 'پروفایل کاربر' } },
         { path: '/products', component: () => import('../views/Products.vue'), meta: { title: 'محصولات' } },
         { path: '/pagination', component: () => import('../views/Pagination.vue'), meta: { title: 'صفحه بندی' } },
-        { path: '/cards', component: () => import('../views/Cards.vue'), meta: { title: 'کارت‌ها' } }
+        { path: '/cards', component: () => import('../views/Cards.vue'), meta: { title: 'کارت‌ها' } },
+        { path: '/contacts', component: () => import('../views/Contact.vue'), meta: { title: 'مخاطبین' } }
       ]
     },
     { path: '/login', component: () => import('../views/Login.vue'), meta: { title: 'ورود' } },

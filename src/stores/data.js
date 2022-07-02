@@ -1,4 +1,5 @@
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
+import james from '../assets/images/james.svg'
 
 export const usersInfo = reactive({
   users: [
@@ -207,6 +208,66 @@ export const productsInfo = reactive({
     }
   ]
 })
+
+export const contactsList = ref(
+  [
+    {
+      name: 'امید دلکش',
+      position: 'توسعه‌دهنده',
+      avatar: james,
+      email: 'omiddellcash@gmail.com',
+      website: 'i-am-dellcash.netlify.app',
+      companyEmail: 'dellcashomid@gmail.com',
+      phone: '+989353417352',
+      secondaryPhone: '+989301630212',
+      address: 'تهران٫ ایران'
+    },
+    {
+      name: 'عرفان طاهری',
+      position: 'توسعه‌دهنده',
+      avatar: 'https://joeschmoe.io/api/v1/male/jacques',
+      email: 'mailto:razvan@vue.dev',
+      companyEmail: 'mailto:test@vue.dev',
+      website: 'https://github.com/rstoenescu',
+      phone: '+1-004-658-0042',
+      secondaryPhone: '(331) 009-4655 x3147',
+      address: '92290 Lisa Cove'
+    },
+    {
+      name: 'رسول فلاح',
+      position: 'توسعه‌دهنده',
+      avatar: 'https://joeschmoe.io/api/v1/male/jerry',
+      email: 'mailto:test@vue.dev',
+      companyEmail: 'mailto:test@vue.dev',
+      website: 'http://jeffgalbraith.dev/',
+      phone: '175.718.4633 x878',
+      secondaryPhone: '175.718.4633 x878',
+      address: 'Calgary, Canada'
+    },
+    {
+      name: 'هوشنگ حسینی',
+      position: 'Administrator',
+      avatar: 'https://joeschmoe.io/api/v1/male/joe',
+      email: 'test.@vue.dev',
+      companyEmail: 'test.@vue.dev',
+      website: 'http://test1.dev/',
+      phone: '175.718.4633 x878',
+      secondaryPhone: '175.718.4633 x878',
+      address: 'Calgary, Canada'
+    },
+    {
+      name: 'بهداد ارژنگ',
+      position: 'Administrator',
+      avatar: 'https://joeschmoe.io/api/v1/male/josh',
+      email: 'test2.@vue.dev',
+      companyEmail: 'test.@vue.dev',
+      website: 'http://test2.dev/',
+      phone: '175.718.4633 x878',
+      secondaryPhone: '175.718.4633 x878',
+      address: 'Calgary, Canada'
+    }
+  ]
+)
 
 export const toFarsiNumber = (n) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
