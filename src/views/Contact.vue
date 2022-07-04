@@ -1,92 +1,176 @@
 <script setup>
+import { onMounted } from 'vue';
 import { contactsList } from '../stores/data';
 
 const selectedContact = ref({})
 const tab = ref(false)
-const details = ref([
-  {
-    // icon: '',
-    // iconColor: '',
-    lable: '',
-    field: '',
+const icons = ref(['i-carbon-phone', 'i-carbon-phone-application', 'i-carbon-ibm-cloud-internet-services', 'i-carbon-accessibility-alt'])
+
+const showContact = (contact) => {
+  selectedContact.value = contact
+  tab.value = true
+}
+
+onMounted(() => {
+  if (window.innerWidth > 1023) {
+    const contact = contactsList.value.find(contact => contact.id === 1)
+    selectedContact.value = contact
   }
-])
+})
 </script>
 
 <template>
-  <main>
-    <section m2 v-if="!tab">
+  <main lg="irt52j">
+    <section v-if="!tab" class="lkpu0b">
       <div relative>
-        <input type="text"
-          class="w-full rounded-full border border-gray duration-250 py-2 px-4 hover:border-gray-800 focus:outline-none focus:border-gray-900">
-        <div i-carbon-search class="absolute top-2 left-2 text-6 text-gray" />
+        <input type="text" class="fwut68">
+        <div i-carbon-search class="cy56ff" />
       </div>
-      <h3 class="text-center fw1 text-gray mt5">{{ contactsList.length }} مخاطب</h3>
+      <h3 class="yme02r">{{ contactsList.length }} مخاطب</h3>
 
       <div>
-        <div>
-          <div v-for="contact in contactsList" :key="contact" @click="selectedContact = contact, tab = !tab"
-            class="flex items-center p2 cursor-pointer duration-250 hover:bg-gray/30">
-            <img :src="contact.avatar" class="w-12 rounded-full bg-gray/50 ml3">
-            <div leading-4>
-              <h5>{{ contact.name }}</h5>
-              <h6 class="fw1 text-gray">{{ contact.position }}</h6>
-            </div>
-          </div>
+        <div lg:hidden>
+          <ContactList v-for="contact in contactsList" :key="contact" :contact="contact"
+            @click="showContact(contact)" />
+        </div>
+
+        <div hidden lg:block>
+          <ContactList v-for="contact in contactsList" :key="contact" :contact="contact"
+            @click="selectedContact = contact" />
         </div>
       </div>
 
 
-      <div class="flex items-center justify-evenly text-center mt2">
-        <div
-          class="w-full flex justify-center flex-col items-center p2 bg-gray/30 cursor-pointer duration-250 hover:bg-gray/70">
-          <div i-carbon-user-filled class="text-5" />
+      <div class="k9z2jy">
+        <div class="h9r3i3 border-b">
+          <div i-carbon-user-filled text5 />
           <h5 fw1>همه</h5>
         </div>
-        <div
-          class="w-full flex justify-center flex-col items-center p2 bg-gray/30 cursor-pointer duration-250 hover:bg-gray/70">
-          <div i-carbon-star-filled class="text-5" />
+        <div class="h9r3i3">
+          <div i-carbon-star-filled text5 />
           <h5 fw1>مورده علاقه</h5>
         </div>
       </div>
     </section>
 
-    <div v-if="selectedContact, tab" class="">
-      <div class="flex items-center justify-between p3 border-b border-gray">
-        <div flex items-center>
-          <img :src="selectedContact.avatar" class="w-20 rounded-full bg-gray/50 ml3">
-          <div leading-5>
-            <h4>{{ selectedContact.name }}</h4>
-            <h5 class="fw1 text-gray">{{ selectedContact.position }}</h5>
-          </div>
-        </div>
-        <div cursor-pointer>
-          <div i-carbon-arrow-left text-5 @click="tab = false" />
-        </div>
-      </div>
-      <div class="flex items-center" p2>
-        <div w-full>
-          <div leading-5 p2 border-b-1 border-gray>
-            <h4 class="fw1">{{ selectedContact.email }}</h4>
-            <h6 fw1 text-gray-800>پست الکترونیک</h6>
-          </div>
-          <div leading-5 p2 border-b-1 border-gray>
-            <h4 class="fw1">{{ selectedContact.phone }}</h4>
-            <h6 fw1 text-gray-800>شماره تماس</h6>
-          </div>
-          <div leading-5 p2 border-b-1 border-gray>
-            <h4 class="fw1">{{ selectedContact.website }}</h4>
-            <h6 fw1 text-gray-800>وب‌سایت</h6>
-          </div>
-          <div leading-5 p2 border-b-1 border-gray>
-            <h4 class="fw1">{{ selectedContact.address }}</h4>
-            <h6 fw1 text-gray-800>‌آدرس</h6>
-          </div>
-        </div>
-      </div>
+    <div v-if="selectedContact, tab" class="lg:hidden">
+      <ContactDetail :selectedContact="selectedContact" @back="tab = false" />
+    </div>
+
+    <div v-if="selectedContact" class="we9z53">
+      <ContactDetail :selectedContact="selectedContact" @back="tab = false" />
     </div>
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
+.lkpu0b {
+  margin: 0.5rem;
+}
+
+.fwut68 {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  --un-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--un-border-opacity));
+  border-radius: 9999px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition-duration: 250ms;
+}
+
+.fwut68:focus {
+  --un-border-opacity: 1;
+  border-color: rgba(17, 24, 39, var(--un-border-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.fwut68:hover {
+  --un-border-opacity: 1;
+  border-color: rgba(31, 41, 55, var(--un-border-opacity));
+}
+
+.cy56ff {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.5rem;
+  --un-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--un-text-opacity));
+}
+
+.yme02r {
+  margin-top: 1.25rem;
+  text-align: center;
+  font-weight: 1;
+  --un-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--un-text-opacity));
+}
+
+.k9z2jy {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.h9r3i3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(156, 163, 175, 0.3);
+  padding: 0.5rem;
+  transition-duration: 250ms;
+}
+
+.h9r3i3:hover {
+  background-color: rgba(156, 163, 175, 0.7);
+}
+
+.we9z53 {
+  grid-column: span 3/span 3;
+  display: none;
+  width: 100%;
+  height: 31.3rem;
+  border-radius: 0.25rem;
+  --un-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--un-bg-opacity));
+}
+
+@media (min-width: 1024px) {
+  [lg~="irt52j"] {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin: 0.5rem;
+    align-items: flex-start;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .lkpu0b {
+    grid-column: span 2/span 2;
+    margin: 0rem;
+    width: 100%;
+    border-radius: 0.25rem;
+    --un-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, var(--un-bg-opacity));
+    padding: 0.5rem;
+  }
+
+  .k9z2jy {
+    margin-top: 1.30rem;
+  }
+
+  .we9z53 {
+    display: block;
+  }
+}
 </style>

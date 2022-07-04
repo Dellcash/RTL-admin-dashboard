@@ -1,11 +1,15 @@
 import { ref, reactive } from 'vue'
 import james from '../assets/images/james.svg'
+import jacques from '../assets/images/jacques.svg'
+import jerry from '../assets/images/jerry.svg'
+import joe from '../assets/images/joe.svg'
+import josh from '../assets/images/josh.svg'
 
 export const usersInfo = reactive({
   users: [
     {
       id: '1',
-      img: 'https://joeschmoe.io/api/v1/male/jacques',
+      img: james,
       name: 'عرفان طاهری',
       job: 'توسعه‌دهنده',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -14,7 +18,7 @@ export const usersInfo = reactive({
     },
     {
       id: '2',
-      img: 'https://joeschmoe.io/api/v1/male/josh',
+      img: jacques,
       name: 'رسول فلاح',
       job: 'طراح',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -23,7 +27,7 @@ export const usersInfo = reactive({
     },
     {
       id: '3',
-      img: 'https://joeschmoe.io/api/v1/male/jerry',
+      img: jerry,
       name: 'هوشنگ حسینی',
       job: 'اپراتور',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -32,7 +36,7 @@ export const usersInfo = reactive({
     },
     {
       id: '4',
-      img: 'https://joeschmoe.io/api/v1/male/james',
+      img: james,
       name: 'شاپور پیردوست',
       job: 'مدیر',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -41,7 +45,7 @@ export const usersInfo = reactive({
     },
     {
       id: '5',
-      img: 'https://joeschmoe.io/api/v1/male/joe',
+      img: jacques,
       name: 'ارژنگ بهداد',
       job: 'مشاور',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -50,7 +54,7 @@ export const usersInfo = reactive({
     },
     {
       id: '6',
-      img: 'https://joeschmoe.io/api/v1/male/joe',
+      img: joe,
       name: 'بهداد ارژنگ',
       job: 'اپراتور',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -59,7 +63,7 @@ export const usersInfo = reactive({
     },
     {
       id: '7',
-      img: 'https://joeschmoe.io/api/v1/male/joe',
+      img: jerry,
       name: 'رسول شاپور',
       job: 'توسعه‌دهنده',
       message: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است',
@@ -212,59 +216,159 @@ export const productsInfo = reactive({
 export const contactsList = ref(
   [
     {
+      id: 1,
       name: 'امید دلکش',
       position: 'توسعه‌دهنده',
       avatar: james,
-      email: 'omiddellcash@gmail.com',
-      website: 'i-am-dellcash.netlify.app',
-      companyEmail: 'dellcashomid@gmail.com',
-      phone: '+989353417352',
-      secondaryPhone: '+989301630212',
-      address: 'تهران٫ ایران'
+      phone: {
+        icon: 'i-carbon-phone',
+        title: 'تلفن همراه',
+        detail: '۰۹۳۵۳۴۱۷۳۵۲'
+      },
+      secondaryPhone: {
+        icon: 'i-carbon-phone-application',
+        title: 'تلفن ثابت',
+        detail: '۰۲۱۵۵۵۱۸۰۶۷-۶۶'
+      },
+      email: {
+        icon: 'i-carbon-email',
+        title: 'پست الکترونیک',
+        detail: 'omiddellcash@gmail.com'
+      },
+      website: {
+        icon: 'i-carbon-ibm-cloud-internet-services',
+        title: 'وب‌سابت',
+        detail: 'i-am-dellcash.netlify.app'
+      },
+      address: {
+        icon: 'i-carbon-accessibility-alt',
+        title: 'آدرس',
+        detail: 'تهران٫ ایران'
+      }
     },
     {
+      id: 2,
       name: 'عرفان طاهری',
       position: 'توسعه‌دهنده',
-      avatar: 'https://joeschmoe.io/api/v1/male/jacques',
-      email: 'mailto:razvan@vue.dev',
-      companyEmail: 'mailto:test@vue.dev',
-      website: 'https://github.com/rstoenescu',
-      phone: '+1-004-658-0042',
-      secondaryPhone: '(331) 009-4655 x3147',
-      address: '92290 Lisa Cove'
+      avatar: jacques,
+      phone: {
+        icon: 'i-carbon-phone',
+        title: 'تلفن همراه',
+        detail: '۰۹۳۵۵۵۳۹۸۴'
+      },
+      secondaryPhone: {
+        icon: 'i-carbon-phone-application',
+        title: 'تلفن ثابت',
+        detail: '۰۹۱۲۵۵۱۲۵۱۲'
+      },
+      email: {
+        icon: 'i-carbon-email',
+        title: 'پست الکترونیک',
+        detail: 'erfantaheri@test.com'
+      },
+      website: {
+        icon: 'i-carbon-ibm-cloud-internet-services',
+        title: 'وب‌سابت',
+        detail: 'taheri.netlify.app'
+      },
+      address: {
+        icon: 'i-carbon-accessibility-alt',
+        title: 'آدرس',
+        detail: 'تهران٫ ایران'
+      }
     },
     {
+      id: 3,
       name: 'رسول فلاح',
       position: 'توسعه‌دهنده',
-      avatar: 'https://joeschmoe.io/api/v1/male/jerry',
-      email: 'mailto:test@vue.dev',
-      companyEmail: 'mailto:test@vue.dev',
-      website: 'http://jeffgalbraith.dev/',
-      phone: '175.718.4633 x878',
-      secondaryPhone: '175.718.4633 x878',
-      address: 'Calgary, Canada'
+      avatar: jerry,
+      phone: {
+        icon: 'i-carbon-phone',
+        title: 'تلفن همراه',
+        detail: '۰۹۳۹۵۵۸۲۳۵۰'
+      },
+      secondaryPhone: {
+        icon: 'i-carbon-phone-application',
+        title: 'تلفن ثابت',
+        detail: '۰۹۱۰۳۳۱۱۵۸۰'
+      },
+      email: {
+        icon: 'i-carbon-email',
+        title: 'پست الکترونیک',
+        detail: 'rasolfallah@test.com'
+      },
+      website: {
+        icon: 'i-carbon-ibm-cloud-internet-services',
+        title: 'وب‌سابت',
+        detail: 'fallah.netlify.app'
+      },
+      address: {
+        icon: 'i-carbon-accessibility-alt',
+        title: 'آدرس',
+        detail: 'تهران٫ ایران'
+      }
     },
     {
+      id: 4,
       name: 'هوشنگ حسینی',
       position: 'Administrator',
-      avatar: 'https://joeschmoe.io/api/v1/male/joe',
-      email: 'test.@vue.dev',
-      companyEmail: 'test.@vue.dev',
-      website: 'http://test1.dev/',
-      phone: '175.718.4633 x878',
-      secondaryPhone: '175.718.4633 x878',
-      address: 'Calgary, Canada'
+      avatar: joe,
+      phone: {
+        icon: 'i-carbon-phone',
+        title: 'تلفن همراه',
+        detail: '۰۹۳۵۱۱۵۲۴۹۸'
+      },
+      secondaryPhone: {
+        icon: 'i-carbon-phone-application',
+        title: 'تلفن ثابت',
+        detail: '۰۹۱۰۱۰۲۳۸۸۴'
+      },
+      email: {
+        icon: 'i-carbon-email',
+        title: 'پست الکترونیک',
+        detail: 'h-hoseyni@test.com'
+      },
+      website: {
+        icon: 'i-carbon-ibm-cloud-internet-services',
+        title: 'وب‌سابت',
+        detail: 'hoseyni.netlify.app'
+      },
+      address: {
+        icon: 'i-carbon-accessibility-alt',
+        title: 'آدرس',
+        detail: 'تهران٫ ایران'
+      }
     },
     {
+      id: 5,
       name: 'بهداد ارژنگ',
       position: 'Administrator',
-      avatar: 'https://joeschmoe.io/api/v1/male/josh',
-      email: 'test2.@vue.dev',
-      companyEmail: 'test.@vue.dev',
-      website: 'http://test2.dev/',
-      phone: '175.718.4633 x878',
-      secondaryPhone: '175.718.4633 x878',
-      address: 'Calgary, Canada'
+      avatar: josh,
+      phone: {
+        icon: 'i-carbon-phone',
+        title: 'تلفن همراه',
+        detail: '۰۹۱۲۸۵۸۳۳۰۹'
+      },
+      secondaryPhone: {
+        icon: 'i-carbon-phone-application',
+        title: 'تلفن ثابت',
+        detail: '۰۹۱۲۰۹۷۴۷۱۲'
+      },
+      email: {
+        icon: 'i-carbon-email',
+        title: 'پست الکترونیک',
+        detail: 'behdadar@test.com'
+      },
+      website: {
+        icon: 'i-carbon-ibm-cloud-internet-services',
+        title: 'وب‌سابت',
+        detail: 'arjang.netlify.app'
+      },
+      address: {
+        icon: 'i-carbon-accessibility-alt',
+        title: 'آدرس',
+        detail: 'تهران٫ ایران'
+      }
     }
   ]
 )
